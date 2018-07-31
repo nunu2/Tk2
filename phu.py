@@ -3310,17 +3310,17 @@ def lineBot(op):
                                 group = client.getGroup(to)
                                 contact = [mem.mid for mem in group.members]
                                 ct1, ct2, ct3, ct4, ct5, jml = [], [], [], [], [], len(contact)
-                                if jml <= 100:
+                                if jml <= 20:
                                     mentionMembers(to, contact)
-                                elif jml > 100 and jml <= 200:
-                                    for a in range(0, 99):
+                                elif jml > 20 and jml <= 200:
+                                    for a in range(0, 20):
                                         ct1 += [contact[a]]
                                     for b in range(100, jml):
                                         ct2 += [contact[b]]
                                     mentionMembers(to, ct1)
                                     mentionMembers(to, ct2)
                                 elif jml > 200 and jml <= 300:
-                                    for a in range(0, 99):
+                                    for a in range(0, 20):
                                         ct1 += [contact[a]]
                                     for b in range(100, 199):
                                         ct2 += [contact[b]]
@@ -3330,7 +3330,7 @@ def lineBot(op):
                                     mentionMembers(to, ct2)
                                     mentionMembers(to, ct3)
                                 elif jml > 300 and jml <= 400:
-                                    for a in range(0, 99):
+                                    for a in range(0, 20):
                                         ct1 += [contact[a]]
                                     for b in range(100, 199):
                                         ct2 += [contact[b]]
@@ -3343,7 +3343,7 @@ def lineBot(op):
                                     mentionMembers(to, ct3)
                                     mentionMembers(to, ct4)
                                 elif jml > 400 and jml <= 500:
-                                    for a in range(0, 99):
+                                    for a in range(0, 20):
                                         ct1 += [contact[a]]
                                     for b in range(100, 199):
                                         ct2 += [contact[b]]
@@ -3751,12 +3751,12 @@ def lineBot(op):
                         elif cmd == "มอง" or cmd == "tagall" or cmd == "desah" or cmd == "jembot":
                             group = client.getGroup(msg.to)
                             nama = [contact.mid for contact in group.members]
-                            k = len(nama)//100
+                            k = len(nama)//20
                             for a in range(k+1):
                                 txt = u''
                                 s=0
                                 b=[]
-                                for i in group.members[a*100 : (a+1)*100]:
+                                for i in group.members[a*20 : (a+1)*20]:
                                     b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
                                     s += 7
                                     txt += u'@RhyN_\n'
