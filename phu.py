@@ -1,4 +1,4 @@
-# ????M ? MI??I????
+# เขียนขึ้นโดย  ༄۞ꪶꪶꪣꪫꪊุ۞࿐
 # -*- coding: utf-8 -*-
 from Linephu.linepy import *
 from Linephu.akad.ttypes import Message
@@ -342,6 +342,9 @@ helpmsg ="""
 ╠ตั้งติ๊กคนเข้า
 ╠ลบติ๊กคนเข้า
 ╠ตั้งคนเข้า:「ข้อความที่ต้องการ」
+╠
+╠
+╠
 ╠═════════════════════ 
 """
 helpmusic ="""「 Music 」
@@ -354,7 +357,7 @@ helpbio ="""「 Biography 」
 • Key:  Biography「query」
 • Detail Biography
 • Key:  Biography「query num」"""
-helptrans= """「 TransLator 」
+helptrans= """「คำสั่งคิกเก้อ」
 
 • af : Afrikaans
 • sq : Albanian
@@ -409,8 +412,12 @@ helptrans= """「 TransLator 」
 • uk : Ukrainian
 • vi : Vietnamese
 example :
-tr-en saya tampan
-say-en saya keren"""
+
+༄۞ꪶꪶꪣꪫꪊุ۞࿐
+
+@ID.LINE https://line.me/ti/p/t39FP9K59s
+
+"""
 #==============================================================================================================
 #==============================================================================================================
 #=============================================[ OPERATION STARTED ]============================================
