@@ -27,6 +27,69 @@ ki7 = LINE()
 ki8 = LINE()
 ki9 = LINE()
 ki10 = LINE()
+
+#~~~~~~~~~~~เขียนโดย༄۞ꪶꪶꪣꪫꪊุ۞࿐~~~~~~~~~~~~~~~~~~~~~~~~#
+
+print ("Login Succes")
+
+clientMID = client.profile.mid
+clientProfile = client.getProfile()
+clientSettings = client.getSettings()
+
+ki1MID = ki1.profile.mid
+ki1Profile = ki1.getProfile()
+ki1Settings = ki1.getSettings()
+
+ki2MID = ki2.profile.mid
+ki2Profile = ki2.getProfile()
+ki2Settings = ki2.getSettings()
+
+ki3MID = ki3.profile.mid
+ki3Profile = ki3.getProfile()
+ki3Settings = ki3.getSettings()
+
+ki4MID = ki4.profile.mid
+ki4Profile = ki4.getProfile()
+ki4Settings = ki4.getSettings()
+
+ki5MID = ki5.profile.mid
+ki5Profile = ki5.getProfile()
+ki5Settings = ki5.getSettings()
+
+ki6MID = ki6.profile.mid
+ki6Profile = ki6.getProfile()
+ki6Settings = ki6.getSettings()
+
+ki7MID = ki7.profile.mid
+ki7Profile = ki7.getProfile()
+ki7Settings = ki7.getSettings()
+
+ki8MID = ki8.profile.mid
+ki8Profile = ki8.getProfile()
+ki8Settings = ki8.getSettings()
+
+ki9MID = ki9.profile.mid
+ki9Profile = ki9.getProfile()
+ki9Settings = ki9.getSettings()
+
+ki10MID = ki10.profile.mid
+ki10Profile = ki10.getProfile()
+ki10Settings = ki10.getSettings()
+
+#~~~~~~~~~~~เขียนโดย༄۞ꪶꪶꪣꪫꪊุ۞࿐~~~~~~~~~~~~~~~~~~~~~~~~#
+
+oepoll = OEPoll(ki10)
+oepoll = OEPoll(ki9)
+oepoll = OEPoll(ki8)
+oepoll = OEPoll(ki7)
+oepoll = OEPoll(ki6)
+oepoll = OEPoll(ki5)
+oepoll = OEPoll(ki4)
+oepoll = OEPoll(ki3)
+oepoll = OEPoll(ki2)
+oepoll = OEPoll(ki1)
+oepoll = OEPoll(line)
+readOpen =
 #==============================================================================================================
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
