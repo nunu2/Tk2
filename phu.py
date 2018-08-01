@@ -78,6 +78,12 @@ ki10Settings = ki10.getSettings()
 
 #~~~~~~~~~~~เขียนโดย༄۞ꪶꪶꪣꪫꪊุ۞࿐~~~~~~~~~~~~~~~~~~~~~~~~#
 
+#==============================================================================================================
+readOpen = codecs.open("read.json","r","utf-8")
+settingsOpen = codecs.open("temp.json","r","utf-8")
+stickersOpen = codecs.open("sticker.json","r","utf-8")
+imagesOpen = codecs.open("image.json","r","utf-8")
+#~~~~~~~~~~~~~~~~~~~~~~~เขียนขึ้นโดย༄۞ꪶꪶꪣꪫꪊุ۞࿐~~~~~~~~~~~~~~~#
 oepoll = OEPoll(ki10)
 oepoll = OEPoll(ki9)
 oepoll = OEPoll(ki8)
@@ -91,14 +97,36 @@ oepoll = OEPoll(ki1)
 oepoll = OEPoll(line)
 readOpen =
 #==============================================================================================================
-readOpen = codecs.open("read.json","r","utf-8")
-settingsOpen = codecs.open("temp.json","r","utf-8")
-stickersOpen = codecs.open("sticker.json","r","utf-8")
-imagesOpen = codecs.open("image.json","r","utf-8")
-#==============================================================================================================
 mid = client.getProfile().mid
 #==============================
-clientMID = client.profile.mid
+Rfu = [line,ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10]
+Exc = [ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10]
+clientMID = client.profile().mid
+lineMID = line.getProfile().mid
+kiMID = ki1.getProfile().mid
+kkMID = ki2.getProfile().mid
+kcMID = ki3.getProfile().mid
+kcMID = ki4.getProfile().mid
+kiMID = ki5.getProfile().mid
+kkMID = ki6.getProfile().mid
+kcMID = ki7.getProfile().mid
+kcMID = ki8.getProfile().mid
+kiMID = ki9.getProfile().mid
+kkMID = ki10.getProfile().mid
+bot1 = line.getProfile().mid
+RfuBot=[lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID]
+Family=["ud3a6bfda60a956cca0f58f2a14bae808",lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID,]
+admin=['ud3a6bfda60a956cca0f58f2a14bae808',lineMID]
+RfuFamily = RfuBot + Family
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
+protectname = []
+protecturl = []
+protection = []
+autocancel = {}
+autoinvite = []
+autoleaveroom = []
+targets = []
+#~~~~~~~~~~~~~~~~~~[─•۞✟ℓℓ
 #==============================
 clientProfile = client.getProfile()
 #==============================================================================================================
