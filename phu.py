@@ -99,10 +99,10 @@ readOpen =
 #==============================================================================================================
 mid = client.getProfile().mid
 #==============================
-Rfu = [line,ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10]
+Rfu = [client,ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10]
 Exc = [ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10]
 clientMID = client.profile().mid
-lineMID = line.getProfile().mid
+clientMID = line.getProfile().mid
 kiMID = ki1.getProfile().mid
 kkMID = ki2.getProfile().mid
 kcMID = ki3.getProfile().mid
@@ -113,10 +113,19 @@ kcMID = ki7.getProfile().mid
 kcMID = ki8.getProfile().mid
 kiMID = ki9.getProfile().mid
 kkMID = ki10.getProfile().mid
-bot1 = line.getProfile().mid
-RfuBot=[lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID]
-Family=["ud3a6bfda60a956cca0f58f2a14bae808",lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID,]
-admin=['ud3a6bfda60a956cca0f58f2a14bae808',lineMID]
+bot1 = clinet.getProfile().mid
+RfuBot=[clientMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID]
+Family=["ud3a6bfda60a956cca0f58f2a14bae808",clientMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID,]
+admin=['ud3a6bfda60a956cca0f58f2a14bae808',clientMID]
+contact = client.getProfile()
+backup = client.getProfile()
+backup.displayName = contact.displayName
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
+squareChatMid='mdbd283c4f8e1840fbcecf1e0e0fd9288'
+#helpMute = """Switched to normal mode"""
+#helpUnmute = """I'll be here when you need me"""
+#========
 RfuFamily = RfuBot + Family
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~
 protectname = []
@@ -126,27 +135,8 @@ autocancel = {}
 autoinvite = []
 autoleaveroom = []
 targets = []
-#~~~~~~~~~~~~~~~~~~[─•۞✟ℓℓ
-#==============================
-clientProfile = client.getProfile()
-#==============================================================================================================
-clientSettings = client.getSettings()
-#==============================================================================================================
-clientPoll = OEPoll(client)
-#==============================================================================================================
-admin = "ude3230559bf63a55b9c28aa20ea194e3"
-owner = "ude3230559bf63a55b9c28aa20ea194e3"
-Bots=[mid,"ude3230559bf63a55b9c28aa20ea194e3"]
 #==============================================================================================================
 #==============================================================================================================
-contact = client.getProfile()
-backup = client.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
-squareChatMid='mdbd283c4f8e1840fbcecf1e0e0fd9288'
-#helpMute = """Switched to normal mode"""
-#helpUnmute = """I'll be here when you need me"""
 #==============================================================================================================
 msg_dict = {}
 msg_image={}
