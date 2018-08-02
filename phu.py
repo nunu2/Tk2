@@ -95,7 +95,6 @@ oepoll = OEPoll(ki3)
 oepoll = OEPoll(ki2)
 oepoll = OEPoll(ki1)
 oepoll = OEPoll(line)
-readOpen =
 #==============================================================================================================
 mid = client.getProfile().mid
 #==============================
@@ -2071,7 +2070,8 @@ def lineBot(op):
                         ki6.updateGroup(G)
                         settings["blacklist"][op.param2] = True
 	                elif op.param3 in ki8MID:
-                    if op.param2 in ki7MID:
+				
+                    if op.param2 in ki8MID:
                         G = ki7.getGroup(op.param1)
                         G.preventedJoinByTicket = False
                         ki7.updateGroup(G)
