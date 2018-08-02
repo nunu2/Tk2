@@ -1947,7 +1947,7 @@ def lineBot(op):
                         ki4.updateGroup(G)
                         settings["blacklist"][op.param2] = True
 
-	        elif op.param3 in ki6MID:
+                elif op.param3 in ki6MID:
                     if op.param2 in ki5MID:
                         G = k5.getGroup(op.param1)
                         G.preventedJoinByTicket = False
