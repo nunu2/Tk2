@@ -3505,61 +3505,6 @@ def lineBot(op):
                                 client.sendMessage(to,"ข้อความตอนเราของคุณ : " + text_)
                             except:
                                 client.sendMessage(to,"WelcomeMessage\nFailed to replace message")
-                        elif cmd == "แทค":
-                            if msg.toType == 0:
-                                sendMention(to, to)
-                            elif msg.toType == 2:
-                                group = client.getGroup(to)
-                                contact = [mem.mid for mem in group.members]
-                                ct1, ct2, ct3, ct4, ct5, jml = [], [], [], [], [], len(contact)
-                                if jml <= 20:
-                                    mentionMembers(to, contact)
-                                elif jml > 20 and jml <= 200:
-                                    for a in range(0, 20):
-                                        ct1 += [contact[a]]
-                                    for b in range(100, jml):
-                                        ct2 += [contact[b]]
-                                    mentionMembers(to, ct1)
-                                    mentionMembers(to, ct2)
-                                elif jml > 200 and jml <= 300:
-                                    for a in range(0, 20):
-                                        ct1 += [contact[a]]
-                                    for b in range(100, 199):
-                                        ct2 += [contact[b]]
-                                    for c in range(200, jml):
-                                        ct3 += [contact[c]]
-                                    mentionMembers(to, ct1)
-                                    mentionMembers(to, ct2)
-                                    mentionMembers(to, ct3)
-                                elif jml > 300 and jml <= 400:
-                                    for a in range(0, 20):
-                                        ct1 += [contact[a]]
-                                    for b in range(100, 199):
-                                        ct2 += [contact[b]]
-                                    for c in range(200, 299):
-                                        ct3 += [contact[c]]
-                                    for d in range(300, jml):
-                                        ct4 += [contact[d]]
-                                    mentionMembers(to, ct1)
-                                    mentionMembers(to, ct2)
-                                    mentionMembers(to, ct3)
-                                    mentionMembers(to, ct4)
-                                elif jml > 400 and jml <= 500:
-                                    for a in range(0, 20):
-                                        ct1 += [contact[a]]
-                                    for b in range(100, 199):
-                                        ct2 += [contact[b]]
-                                    for c in range(200, 299):
-                                        ct3 += [contact[c]]
-                                    for d in range(300, 399):
-                                        ct4 += [contact[d]]
-                                    for e in range(400, jml):
-                                        ct4 += [contact[e]]
-                                    mentionMembers(to, ct1)
-                                    mentionMembers(to, ct2)
-                                    mentionMembers(to, ct3)
-                                    mentionMembers(to, ct4)
-                                    mentionMembers(to, ct5)
                         elif cmd == "autoadd":
                             if settings["addPesan"] is not None:
                                 client.sendMessage(to,"Your Autoadd is : " + str(settings["addPesan"]))
@@ -5489,7 +5434,188 @@ def lineBot(op):
                 if msg.text in ["บอท","bot","BOT"]:
                     client.sendText(msg.to,"BOT ༄۞ꪶꪶꪣꪫꪊุ۞࿐ ")                
 #==============================================================================================================
-#=====================================================[]=======================================================
+#==============================================================================#
+        if op.type == 17:
+            if op.param2 not in Family:
+                if op.param2 in Family:
+                    pass
+            if RfuProtect["protect"] == True:
+                if settings["blacklist"][op.param2] == True:
+                    try:
+                        line.kickoutFromGroup(op.param1,[op.param2])
+                        G = line.getGroup(op.param1)
+                        G.preventedJoinByTicket = True
+                        line.updateGroup(G)
+                    except:
+                        try:
+                            line.kickoutFromGroup(op.param1,[op.param2])
+                            G = line.getGroup(op.param1)
+                            G.preventedJoinByTicket = True
+                            line.updateGroup(G)
+                        except:
+                            pass
+        if op.type == 19:
+            if op.param2 not in Family:
+                if op.param2 in Family:
+                    pass
+                elif RfuProtect["protect"] == True:
+                    settings ["blacklist"][op.param2] = True
+                    random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                    random.choice(Rfu).inviteIntoGroup(op.param1,[op.param2])
+
+        if op.type == 13:
+            if op.param2 not in Family:
+                if op.param2 in Family:
+                    pass
+                elif RfuProtect["inviteprotect"] == True:
+                    settings ["blacklist"][op.param2] = True
+                    random.choice(Rfu).cancelGroupInvitation(op.param1,[op.param3])
+                    random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                    if op.param2 not in Family:
+                        if op.param2 in Family:
+                            pass
+                        elif RfuProtect["inviteprotect"] == True:
+                            settings ["blacklist"][op.param2] = True
+                            random.choice(Rfu).cancelGroupInvitation(op.param1,[op.param3])
+                            random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                            if op.param2 not in Family:
+                                if op.param2 in Family:
+                                    pass
+                                elif RfuProtect["cancelprotect"] == True:
+                                    settings ["blacklist"][op.param2] = True
+                                    random.choice(Rfu).cancelGroupInvitation(op.param1,[op.param3])
+
+        if op.type == 11:
+            if op.param2 not in Family:
+                if op.param2 in Family:
+                    pass
+                elif RfuProtect["linkprotect"] == True:
+                    settings ["blacklist"][op.param2] = True
+                    G = line.getGroup(op.param1)
+                    G.preventedJoinByTicket = True
+                    line.updateGroup(G)
+                    random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+        if op.type == 5:
+            if RfuProtect["autoAdd"] == True:
+                if (settings["message"] in [""," ","\n",None]):
+                    pass
+                else:
+                    line.sendMessage(op.param1,str(settings["message"]))
+                    ki1.sendMessage(op.param1,str(settings["message"]))
+                    ki2.sendMessage(op.param1,str(settings["message"]))
+                    ki3.sendMessage(op.param1,str(settings["message"]))
+                    ki4.sendMessage(op.param1,str(settings["message"])) 
+                    ki5.sendMessage(op.param1,str(settings["message"]))
+                    ki6.sendMessage(op.param1,str(settings["message"]))
+                    ki7.sendMessage(op.param1,str(settings["message"]))
+                    ki8.sendMessage(op.param1,str(settings["message"])) 
+                    ki9.sendMessage(op.param1,str(settings["message"]))
+                    ki10.sendMessage(op.param1,str(settings["message"]))
+
+        if op.type == 11:
+            if RfuProtect["linkprotect"] == True:
+                if op.param2 not in Family:
+                    G = line.getGroup(op.param1)
+                    G.preventedJoinByTicket = True
+                    random.choice(Rfu).updateGroup(G)
+                    random.choice(Rfu).kickoutFromGroup(op.param1,[op.param3])                    
+
+        if op.type == 13:
+           if RfuProtect["Protectguest"] == True:
+               if op.param2 not in Family:
+                  random.choice(Rfu).cancelGroupInvitation(op.param1,[op.param3])
+                  random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+
+        if op.type == 17:
+           if RfuProtect["Protectjoin"] == True:
+               if op.param2 not in Family:
+                   random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+
+        if op.type == 1:
+            if sender in Setmain["foto"]:
+                path = line.downloadObjectMsg(msg_id)
+                del Setmain["foto"][sender]
+                line.updateProfilePicture(path)
+                line.sendMessage(to,"Foto berhasil dirubah")
+
+        if op.type == 26:
+            msg = op.message
+            text = msg.text
+            msg_id = msg.id
+            receiver = msg.to
+            sender = msg._from
+            if msg.toType == 0:
+                if sender != line.profile.mid:
+                    to = sender
+                else:
+                    to = receiver
+            else:
+                to = receiver
+                if settings["autoRead"] == True:
+                    line.sendChatChecked(to, msg_id)
+                    ki1.sendChatChecked(to, msg_id)
+                    ki2.sendChatChecked(to, msg_id)
+                    ki3.sendChatChecked(to, msg_id)
+                    ki4.sendChatChecked(to, msg_id)
+                    ki5.sendChatChecked(to, msg_id)
+                    ki6.sendChatChecked(to, msg_id)
+                    ki7.sendChatChecked(to, msg_id)
+                    ki8.sendChatChecked(to, msg_id)
+                    ki9.sendChatChecked(to, msg_id)
+                    ki10.sendChatChecked(to, msg_id)    
+                if to in read["readPoint"]:
+                    if sender not in read["ROM"][to]:
+                        read["ROM"][to][sender] = True
+                if sender in settings["mimic"]["target"] and settings["mimic"]["status"] == True and settings["mimic"]["target"][sender] == True:
+                    text = msg.text
+                    if text is not None:
+                        line.sendMessage(msg.to,text)                        
+                if msg.contentType == 0 and sender not in lineMID and msg.toType == 2:
+                    if "MENTION" in list(msg.contentMetadata.keys())!= None:
+                         if settings['potoMention'] == True:
+                             contact = line.getContact(msg._from)
+                             cName = contact.pictureStatus
+                             balas = ["http://dl.profile.line-cdn.net/" + cName]
+                             ret_ = random.choice(balas)
+                             mention = ast.literal_eval(msg.contentMetadata["MENTION"])
+                             mentionees = mention["MENTIONEES"]
+                             for mention in mentionees:
+                                   if mention["M"] in lineMID:
+                                          line.sendImageWithURL(to,ret_)
+                                          break  
+                if msg.contentType == 0 and sender not in lineMID and msg.toType == 2:
+                    if "MENTION" in list(msg.contentMetadata.keys()) != None:
+                         if settings['detectMention'] == True:
+                             contact = line.getContact(msg._from)
+                             cName = contact.displayName
+                            # balas = ["『 Auto Respon』\n " + cName + "\n" + str(settings["tag1"])
+                             balas = ["『 Auto Respon』\n " + cName + "\n" + str(settings["tag1"]) , "『 Auto Respon』\n" + cName + "\n" + str(settings["tag2"])]
+                            # ret_ = msg.text1 + random.choice(balas)
+                             ret_ = "" + random.choice(balas)
+                             name = re.findall(r'@(\w+)', msg.text)
+                             mention = ast.literal_eval(msg.contentMetadata["MENTION"])
+                             mentionees = mention['MENTIONEES']
+                             for mention in mentionees:
+                                   if mention['M'] in lineMID:
+                                          line.sendMessage(to,ret_)                                                                         
+                                          break                        
+                                 #         sendMessageWithMention(to, contact.mid)
+                                      #    break
+                if msg.contentType == 0 and sender not in lineMID and msg.toType == 2:
+                    if "MENTION" in list(msg.contentMetadata.keys()) != None:
+                         if settings['detectMention'] == True:
+                            contact = line.getContact(msg._from)
+                            cName = contact.displayName
+                            balas = ["Dont Tag Me!! Im Buy",cName + ""]
+                            ret_ = "@" + random.choice(balas)
+                            name = re.findall(r'@(\w+)', msg.text)
+                            mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                            mentionees = mention['MENTIONEES']
+                            for mention in mentionees:
+                                  if mention['M'] in lineMID:
+                                         line.sendMessage(msg.to,ret_)                                         
+                                         break                         
+#============================================================================================================
 #==============================================================================================================
         if op.type == 32:
             if op.param1 in settings["pcancel"]:
@@ -5680,6 +5806,7 @@ def cium(to, nama):
     except Exception as error:
        print(error)
 #==============================================================================================================
+
 #==============FINNISHING PROTECT========================#
 #=====================================================[]=======================================================
 def sendMention(to, mid, firstmessage, lastmessage):
