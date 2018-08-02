@@ -5102,7 +5102,7 @@ def lineBot(op):
                                 client.sendImageWithURL(msg.to, "http://dl.profile.line-cdn.net/" + contact.pictureStatus)
                                 client.sendImageWithURL(msg.to, str(cu))
 #==============================================================================================================
-#=====================================================[]=======================================================
+#============================================================================================================
 #==============================================================================================================
                     for image in images:
                         if text.lower() == image:
@@ -5138,9 +5138,254 @@ def lineBot(op):
                 elif msg.contentType in [1,2]:
                     if sender in clientMID:
                         client.sendMessage(to, str(msg))
-#==============================================================================================================
-#=====================================================[]=======================================================
-#==============================================================================================================                        
+			
+#~~~~~~~~~~~~~~~~~~~เขียนโดย◇─•۞✟ℓℓஆՁゆຸ۞•─~~~~~~~~~~~~~~#
+                elif msg.text in ["บอท"]:
+                    ki1.sendMessage(msg.to,"1(⊙_⊙)")
+                    ki2.sendMessage(msg.to,"2(⊙_⊙)")
+                    ki3.sendMessage(msg.to,"3(⊙_⊙)")
+                    ki4.sendMessage(msg.to,"4(⊙_⊙)")   
+                    ki5.sendMessage(msg.to,"5(⊙_⊙)")
+                    ki6.sendMessage(msg.to,"6(⊙_⊙)")
+                    ki7.sendMessage(msg.to,"5(⊙_⊙)")
+                    ki8.sendMessage(msg.to,"8(⊙_⊙)") 
+                    ki9.sendMessage(msg.to,"9(⊙_⊙)")
+                    ki10.sendMessage(msg.to,"10(⊙_⊙)")
+                elif msg.text.lower().startswith("bitcoin"):
+                   search = msg.text.split("bitcoin")
+                   with requests.session() as web:
+                       web.headers["User-Agent"] = random.choice(settings["userAgent"])
+                       url = "https://xeonwz.herokuapp.com/bitcoin.api"
+                       r = web.get(url)
+                       data=r.text
+                       data=json.loads(data)
+                       print(data)
+                       hasil = "「 Bitcoin Result 」"
+                       hasil += "\nPrice : " +str(data["btc"])                                
+                       hasil += "\nExpensive : " +str(data["high"])
+                       hasil += "\nCheap : " +str(data["low"])               
+                       line.sendMessage(to, str(hasil))
+#===================================เขียนขึ้นโดย  ༄۞ꪶꪶꪣꪫꪊุ۞࿐===========================================================================
+                elif text.lower() == "รายงาน":
+                    if msg._from in Family:
+                        profile = ki1.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki1.sendMessage(to, text)                                
+                        profile = ki2.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki2.sendMessage(to, text)                                
+                        profile = ki3.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki3.sendMessage(to, text)
+                        profile = ki4.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki4.sendMessage(to, text)                                
+                        profile = ki5.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki5.sendMessage(to, text)                                
+                        profile = ki6.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki6.sendMessage(to, text)
+                        profile = ki7.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki7.sendMessage(to, text)
+                        profile = ki8.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki8.sendMessage(to, text)                                
+                        profile = ki9.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki9.sendMessage(to, text)                                
+                        profile = ki10.getProfile()
+                        text = profile.displayName + "รายงานตัว\nเจ้าค่ะ (◡‿◡✿) "
+                        ki10.sendMessage(to, text)
+                        print ("Kicker Respon")
+#~~~~~~~~~~~~~~~~~~~เขียนโดย◇─•۞✟ℓℓஆՁゆຸ۞•─~~~~~~~~~~~~~~#
+                elif "ชื่อคิก: " in text.lower():
+                    if msg._from in Family:
+                        proses = text.split(": ")
+                        string = text.replace(proses[0] + ": ","")
+                        profile_A = ki1.getProfile()
+                        profile_B = ki2.getProfile()
+                        profile_C = ki3.getProfile()
+                        profile_D = ki4.getProfile()
+                        profile_E = ki5.getProfile()
+                        profile_F = ki6.getProfile()
+                        profile_G = ki7.getProfile()
+                        profile_H = ki8.getProfile()
+                        profile_I = ki9.getProfile()
+                        profile_J = ki10.getProfile()
+                        profile_A.displayName = string
+                        profile_B.displayName = string
+                        profile_C.displayName = string
+                        profile_D.displayName = string
+                        profile_E.displayName = string
+                        profile_F.displayName = string
+                        profile_G.displayName = string
+                        profile_H.displayName = string
+                        profile_I.displayName = string
+                        profile_J.displayName = string
+                        ki.updateProfile(profile_A)
+                        kk.updateProfile(profile_B)
+                        kc.updateProfile(profile_C)
+                        ke.updateProfile(profile_D) 
+                        ki.updateProfile(profile_E)
+                        kk.updateProfile(profile_F)
+                        kc.updateProfile(profile_G)
+                        ke.updateProfile(profile_H) 
+                        ki.updateProfile(profile_I)
+                        kk.updateProfile(profile_J)
+                        line.sendMessage(msg.to,"Update Name All Kicker to : " + string)
+                        print ("Update Name All Kicker")
+
+                elif "ตัสคิก: " in text.lower():
+                    if msg._from in Family:
+                        proses = text.split(": ")
+                        string = text.replace(proses[0] + ": ","")
+                        profile_A = ki1.getProfile()
+                        profile_B = ki2.getProfile()
+                        profile_C = ki3.getProfile()
+                        profile_D = ki4.getProfile()  
+                        profile_E = ki5.getProfile()
+                        profile_F = ki6.getProfile()
+                        profile_G = ki7.getProfile()
+                        profile_H = ki8.getProfile()  
+                        profile_I = ki9.getProfile()
+                        profile_J = ki10.getProfile()
+                        profile_A.statusMessage = string
+                        profile_B.statusMessage = string
+                        profile_C.statusMessage = string
+                        profile_D.statusMessage = string
+                        profile_E.statusMessage = string
+                        profile_F.statusMessage = string
+                        profile_G.statusMessage = string
+                        profile_H.statusMessage = string
+                        profile_I.statusMessage = string
+                        profile_J.statusMessage = string
+                        ki1.updateProfile(profile_A)
+                        ki2.updateProfile(profile_B)
+                        ki3.updateProfile(profile_C)
+                        ki4.updateProfile(profile_D)
+                        ki5.updateProfile(profile_E)
+                        ki6.updateProfile(profile_F)
+                        ki7.updateProfile(profile_G)
+                        ki8.updateProfile(profile_H)
+                        ki9.updateProfile(profile_I)
+                        ki10.updateProfile(profile_J)
+                        line.sendMessage(msg.to,"Update Bio All Kicker to : " + string)
+                        print ("Update Bio All Kicker")
+			
+#===========≠=================เขียนโดย◇─•۞✟ℓℓஆՁゆຸ۞•─=========================#
+                elif text.lower() == 'ลบรันคิก':
+                    gid = ki1.getGroupIdsInvited()
+                    gid = ki2.getGroupIdsInvited()
+                    gid = ki3.getGroupIdsInvited()
+                    gid = ki4.getGroupIdsInvited()
+                    gid = ki5.getGroupIdsInvited()
+                    gid = ki6.getGroupIdsInvited()
+                    gid = ki7.getGroupIdsInvited() 
+                    gid = ki8.getGroupIdsInvited()
+                    gid = ki9.getGroupIdsInvited()
+                    gid = ki10.getGroupIdsInvited()
+                    start = time.time()
+                    for i in gid:
+                        ki1.rejectGroupInvitation(i)
+                        ki2.rejectGroupInvitation(i)
+                        ki3.rejectGroupInvitation(i)
+                        ki4.rejectGroupInvitation(i)
+                        ki5.rejectGroupInvitation(i)
+                        ki6.rejectGroupInvitation(i)
+                        ki7.rejectGroupInvitation(i)
+                        ki8.rejectGroupInvitation(i)
+                        ki9.rejectGroupInvitation(i)
+                        ki10.rejectGroupInvitation(i)
+                    elapsed_time = time.time() - start
+                    ki1.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki1.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+                    ki2.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki2.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+                    ki3.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki3.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))	
+                    ki4.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki4.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+                    ki5.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki5.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+                    ki6.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki6.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+                    ki7.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki7.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+                    ki8.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki8.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+                    ki9.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki9.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+                    ki10.sendMessage(to, "ลบรันคิกทั้งหมดเสร็จแล้วขอรับ")
+                    ki10.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))
+
+#===========≠===============เขียนโดย◇─•۞✟ℓℓஆՁゆຸ۞•─===========================#    
+
+                elif text.lower() == "ลบแชท":
+                        if msg._from in Family:
+                            try:
+                                ki1.removeAllMessages(op.param2)
+                                ki2.removeAllMessages(op.param2)
+                                ki3.removeAllMessages(op.param2)
+                                ki4.removeAllMessages(op.param2)
+                                ki5.removeAllMessages(op.param2)
+                                ki6.removeAllMessages(op.param2)
+                                ki7.removeAllMessages(op.param2)
+                                ki8.removeAllMessages(op.param2)
+                                ki9.removeAllMessages(op.param2)
+                                ki10.removeAllMessages(op.param2)
+                                line.removeAllMessages(op.param2) 
+                                line.sendMessage(msg.to,"รอสักครู่กำลังลบแชท.")
+                            except:
+                                pass
+                                print ("Remove Chat Kicker")
+
+                elif text.lower() == "หนีหอย":
+                    if msg._from in Family:
+                        ki1.leaveGroup(msg.to)
+                        ki2.leaveGroup(msg.to)
+                        ki3.leaveGroup(msg.to)
+                        ki4.leaveGroup(msg.to)
+                        ki5.leaveGroup(msg.to)
+                        ki6.leaveGroup(msg.to)
+                        ki7.leaveGroup(msg.to)
+                        ki8.leaveGroup(msg.to)
+                        ki9.leaveGroup(msg.to)
+                        ki10.leaveGroup(msg.to)
+                        print ("คิกเก้อออกจากกลุ่ม")
+#=====================================เขียนขึ้นโดย  ༄۞ꪶꪶꪣꪫꪊุ۞࿐=======================================================================
+                elif text.lower() == "มาหอย":
+                    if msg.toType == 2:
+                        group = line.getGroup(to)
+                        group.preventedJoinByTicket = False
+                        line.updateGroup(group)
+                        invsend = 0
+                        ticket = line.reissueGroupTicket(to)
+                        ki1.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki2.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki3.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki4.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki5.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki6.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki7.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki8.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki9.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        ki10.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                        time.sleep(0.01)
+                        group.preventedJoinByTicket = True
+                        line.updateGroup(group)
+                        print ("คิกเก้อเข้าห้อง")
+#=======================================เขียนขึ้นโดย  ༄۞ꪶꪶꪣꪫꪊุ۞࿐=======================================================================                        
         if op.type == 25:
 #            if settings ["mutebot2"] == True:
             msg = op.message
