@@ -439,12 +439,12 @@ helpbio ="""「 Biography 」
 • Key:  Biography「query num」"""
 helptrans= """「คำสั่งคิกเก้อ」
 
-• af : Afrikaans
-• sq : Albanian
-• ar : Arabic
-• hy : Armenian
-• bn : Bengali
-• ca : Catalan
+• All : คิกเข้าห้อง
+• Bye : คิกออกห้อง
+• 1-10แจก : คิกแจกของขวัญ
+• Allแจก : คิกแจกพร้อมกัน
+• ลบรันคิก : 
+• ลบแชทคิก : 
 • zh : Chinese
 • zhcn : Chinese
 • zhtw : Chinese
@@ -825,280 +825,280 @@ def lineBot(op):
                     else:
                         RfuProtect["protect"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกัน   ")
+                            client.sendMessage(msg.to,"เปิดป้องกัน   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกัน   ")
+                            client.sendMessage(msg.to,"เปิดป้องกัน   ")
 
                 elif msg.text.lower() == 'Protect off':
                     if RfuProtect["protect"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกัน   ")
+                            client.sendMessage(msg.to,"ปิดป้องกัน   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกัน   ")
+                            client.sendMessage(msg.to,"ปิดป้องกัน   ")
                     else:
                         RfuProtect["protect"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกัน   ")
+                            client.sendMessage(msg.to,"ปิดป้องกัน   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกัน   ")
+                            client.sendMessage(msg.to,"ปิดป้องกัน   ")
 
                 elif msg.text.lower() == 'cancel pro on':
                     if RfuProtect["cancelprotect"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ   ")
                     else:
                         RfuProtect["cancelprotect"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ   ")
 
                 elif msg.text.lower() == 'cancel pro off':
                     if RfuProtect["cancelprotect"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเลิกเชิญ   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเลิกเชิญ   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเลิกเชิญ   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเลิกเชิญ   ")
                     else:
                         RfuProtect["cancelprotect"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเลิกเชิญ   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเลิกเชิญ   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเลิกเชิญ   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเลิกเชิญ   ")
 
                 elif msg.text.lower() == 'invit pro on':
                     if RfuProtect["inviteprotect"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเชิญ   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเชิญ   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเชิญ   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเชิญ   ")
                     else:
                         RfuProtect["inviteprotect"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเชิญ   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเชิญ   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเชิญ   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเชิญ   ")
 
                 elif msg.text.lower() == 'invit pro off':
                     if RfuProtect["inviteprotect"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเชิญ   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเชิญ   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเชิญ   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเชิญ   ")
                     else:
                         RfuProtect["inviteprotect"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเชิญ   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเชิญ   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเชิญ   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเชิญ   ")
 
                 elif msg.text.lower() == 'link pro on':
                     if RfuProtect["linkprotect"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันลิ้ง   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันลิ้ง   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันลิ้ง   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันลิ้ง   ")
                     else:
                         RfuProtect["linkprotect"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันลิ้ง   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันลิ้ง   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันลิ้ง   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันลิ้ง   ")
 
                 elif msg.text.lower() == 'link pro off':
                     if RfuProtect["linkprotect"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันลิ้ง   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันลิ้ง   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันลิ้ง   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันลิ้ง   ")
                     else:
                         RfuProtect["linkprotect"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันลิ้ง   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันลิ้ง   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันลิ้ง   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันลิ้ง   ")
 
                 elif msg.text.lower() == 'guest pro on':
                     if RfuProtect["Protectguest"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันสมาชิก   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันสมาชิก   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันสมาชิก   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันสมาชิก   ")
                     else:
                         RfuProtect["Protectguest"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันสมาชิก   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันสมาชิก   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันสมาชิก   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันสมาชิก   ")
 
                 elif msg.text.lower() == 'guest pro off':
                     if RfuProtect["Protectguest"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันสมาชิก   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันสมาชิก   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันสมาชิก   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันสมาชิก   ")
                     else:
                         RfuProtect["Protectguest"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันสมาชิก   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันสมาชิก   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันสมาชิก   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันสมาชิก   ")
 
                 elif msg.text.lower() == 'join pro on':
                     if RfuProtect["Protectjoin"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันคนเข้า   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันคนเข้า   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันคนเข้า   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันคนเข้า   ")
                     else:
                         RfuProtect["Protectjoin"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันคนเข้า   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันคนเข้า   ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันคนเข้า   ")
+                            client.sendMessage(msg.to,"เปิดป้องกันคนเข้า   ")
 
                 elif msg.text.lower() == 'join pro off':
                     if RfuProtect["Protectjoin"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
                     else:
                         RfuProtect["Protectjoin"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
+                            client.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
 
                 elif msg.text.lower() == 'เปิดป้องกัน':
                     if RfuProtect["inviteprotect"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"✰เปิดป้องกันทั้งหมด✰")
+                            client.sendMessage(msg.to,"✰เปิดป้องกันทั้งหมด✰")
                         else:
-                            line.sendMessage(msg.to,"✰เปิดป้องกันทั้งหมด✰")
+                            client.sendMessage(msg.to,"✰เปิดป้องกันทั้งหมด✰")
                     else:
                         RfuProtect["inviteprotect"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันเชิญ")
+                            client.sendMessage(msg.to,"เปิดป้องกันเชิญ")
                     if RfuProtect["cancelprotect"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
                     else:
                         RfuProtect["cancelprotect"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
                     if RfuProtect["protect"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
+                            client.sendMessage(msg.to,"เปิดป้องกันยกเลิกเชิญ")
                     else:
                         RfuProtect["protect"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันเตะ")
+                            client.sendMessage(msg.to,"เปิดป้องกันเตะ")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันเตะ")
+                            client.sendMessage(msg.to,"เปิดป้องกันเตะ")
                     if RfuProtect["linkprotect"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันลิ้ง")
+                            client.sendMessage(msg.to,"เปิดป้องกันลิ้ง")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันลิ้ง")
+                            client.sendMessage(msg.to,"เปิดป้องกันลิ้ง")
                     else:
                         RfuProtect["linkprotect"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันลิ้ง")
+                            client.sendMessage(msg.to,"เปิดป้องกันลิ้ง")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันลิ้ง")
+                            client.sendMessage(msg.to,"เปิดป้องกันลิ้ง")
                     if RfuProtect["Protectguest"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันกลุ่ม")
+                            client.sendMessage(msg.to,"เปิดป้องกันกลุ่ม")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันกลุ่ม")
+                            client.sendMessage(msg.to,"เปิดป้องกันกลุ่ม")
                     else:
                         RfuProtect["Protectguest"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันกลุ่ม")
+                            client.sendMessage(msg.to,"เปิดป้องกันกลุ่ม")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันกลุ่ม")
+                            client.sendMessage(msg.to,"เปิดป้องกันกลุ่ม")
                     if RfuProtect["Protectjoin"] == True:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
+                            client.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
+                            client.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
                     else:
                         RfuProtect["Protectjoin"] = True
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
+                            client.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
                         else:
-                            line.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
+                            client.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
 
                 elif msg.text.lower() == 'ปิดป้องกัน':
                     if RfuProtect["inviteprotect"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"✰ปิดป้องกันทั้งหมด✰")
+                            client.sendMessage(msg.to,"✰ปิดป้องกันทั้งหมด✰")
                         else:
-                            line.sendMessage(msg.to,"✰ปิดป้องกันทั้งหมด✰")
+                            client.sendMessage(msg.to,"✰ปิดป้องกันทั้งหมด✰")
                     else:
                         RfuProtect["inviteprotect"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันเชิญ")
+                            client.sendMessage(msg.to,"ปิดป้องกันเชิญ")
                     if RfuProtect["cancelprotect"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเชิญ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเชิญ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเชิญ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเชิญ")
                     else:
                         RfuProtect["cancelprotect"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันยกเชิญ")
+                            client.sendMessage(msg.to,"ปิดป้องกันยกเชิญ")
                     if RfuProtect["protect"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันเตะ")
+                            client.sendMessage(msg.to,"ปิดป้องกันเตะ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันเตะ")
+                            client.sendMessage(msg.to,"ปิดป้องกันเตะ")
                     else:
                         RfuProtect["protect"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันเตะ")
+                            client.sendMessage(msg.to,"ปิดป้องกันเตะ")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันเตะ")
+                            client.sendMessage(msg.to,"ปิดป้องกันเตะ")
                     if RfuProtect["linkprotect"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันเปิดลิ้ง")
+                            client.sendMessage(msg.to,"ปิดป้องกันเปิดลิ้ง")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันเปิดลิ้ง")
+                            client.sendMessage(msg.to,"ปิดป้องกันเปิดลิ้ง")
                     else:
                         RfuProtect["linkprotect"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันเปิดลิ้ง")
+                            client.sendMessage(msg.to,"ปิดป้องกันเปิดลิ้ง")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันเปิดลิ้ง")
+                            client.sendMessage(msg.to,"ปิดป้องกันเปิดลิ้ง")
                     if RfuProtect["Protectguest"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันกลุ่ม")
+                            client.sendMessage(msg.to,"ปิดป้องกันกลุ่ม")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันกลุ่ม")
+                            client.sendMessage(msg.to,"ปิดป้องกันกลุ่ม")
                     else:
                         RfuProtect["Protectguest"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันกลุ่ม")
+                            client.sendMessage(msg.to,"ปิดป้องกันกลุ่ม")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันกลุ่ม")
+                            client.sendMessage(msg.to,"ปิดป้องกันกลุ่ม")
                     if RfuProtect["Protectjoin"] == False:
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
+                            client.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
+                            client.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
                     else:
                         RfuProtect["Protectjoin"] = False
                         if settings["lang"] == "JP":
-                            line.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
+                            client.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
                         else:
-                            line.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
+                            client.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
 
 #==============================================================================================================
                 elif msg.text.lower() == "invite:on":
@@ -2543,14 +2543,14 @@ def lineBot(op):
                 pass	
 #~~~~~~~~~~~~~~~~~~~~~~[]~~~~~~~~~~~~~~~~~~~#
         if op.type == 19:
-            if lineMID in op.param3:
+            if clientMID in op.param3:
                 settings["blacklist"][op.param2] = True
         if op.type == 22:
             if settings['leaveRoom'] == True:
-                line.leaveRoom(op.param1)              
+                client.leaveRoom(op.param1)              
         if op.type == 24:
             if settings['leaveRoom'] == True:
-                line.leaveRoom(op.param1)      
+                client.leaveRoom(op.param1)      
 #==============================================================================================================
         if op.type == 25:
 #             if settings ["mutebot2"] == True:
@@ -2572,7 +2572,7 @@ def lineBot(op):
                     else:
                         cmd = command(text)
                     if cmd != "Undefined command":
-#==============================================================================================================
+#==================================༄۞ꪶꪶꪣꪫꪊุ۞࿐============================================================================
                         if cmd == "tts":
                             texttospeech = helptexttospeech()
                             client.sendMessage(to, str(texttospeech))
@@ -2618,7 +2618,7 @@ def lineBot(op):
                             resetTime = timeNow - int(settings["timeRestart"])
                             userid = "https://line.me/ti/p/~" + client.profile.userid
                             client.sendFooter(to, "「เวลาทำงานของบอท」\n{} ".format(str(runtime)), str(userid), "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, client.getContact(sender).displayName)
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~[]~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~[༄۞ꪶꪶꪣꪫꪊุ۞࿐]~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
                         elif cmd == "Allแจก":
                             ki1.sendMessage(to, text=None, contentMetadata=None, contentType=9)
                             ki2.sendMessage(to, text=None, contentMetadata=None, contentType=9)
@@ -3205,7 +3205,7 @@ def lineBot(op):
                                 except:
                                     client.sendMessage(msg.to, "Gagal restore profile failure!")
 #==============================================================================================================
-                        elif cmd.startswith("รันคลอ "):
+                        elif cmd.startswith("รันโทร "):
                             sep = text.split(" ")
                             text = text.replace(sep[0] + " ","")
                             cond = text.split(" ")
@@ -3606,7 +3606,7 @@ def lineBot(op):
                             else:
                                 client.sendMessage(receiver, "ปิดเชคคนแอบอ่านแล้ว")
 #==============================================================================================================
-                        elif cmd == "เชคค่า":
+                        elif cmd == "set":
                             md = "╔══[ การตั้งค่าทั้งหมด ]\n"
                             if settings["autoRead"] == True: md+="╠ อ่านอัตโนมัติ 「เปิด」\n"
                             else: md+="╠ อ่านอัตโนมัติ 「ปิด」\n"
