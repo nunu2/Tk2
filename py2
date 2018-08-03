@@ -18,56 +18,20 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-#line = LINE()
-#line = LINE("เมล","พาส")
-line = LINE('sunu0734@gmail.com','sunu2018')
-line.log("Auth Token : " + str(line.authToken))
-line.log("Timeline Token : " + str(line.tl.channelAccessToken))
+#===========================~เขียนโดย༄۞ꪶꪶꪣꪫꪊุ۞࿐===================================================================================
+line = LINE('susu76917@gmail.com','nunu_kap2018')
+ki1 = LINE('nu2bot2018@gmail.com','nunu_kap2018')
+ki2 = LINE('nu3bot2018@gmail.com','nunu_kap2018')
+ki3 = LINE('nu4bot2018@gmail.com','nunu_kap2018')
+ki4 = LINE('nu8bot2018@gmail.com','nunu_kap2018')
+ki5 = LINE('nu10bot2018@gmail.com','nunu_kap2018')
+ki6 = LINE('bot1nu2018@gmail.com','nunu_kap2018')
+ki7 = LINE('bot2nu2018@gmail.com','nunu_kap2018')
+ki8 = LINE('bot3nu2018@gmail.com','nunu_kap2018')
+ki9 = LINE('nu11bot2018@gmail.com','nunu_kap2018')
+ki10 = LINE('nu9bot2018@gmail.com','nunu_kap2018')
 
-
-ki1 = LINE('nunu4844@gmail.com','sunu2018')
-ki1.log("Auth Token : " + str(ki1.authToken))
-ki1.log("Timeline Token : " + str(ki1.tl.channelAccessToken))
-
-ki2 = LINE('su3nu2018@gmail.com','sunu2018')
-ki2.log("Auth Token : " + str(ki2.authToken))
-ki2.log("Timeline Token : " + str(ki2.tl.channelAccessToken))
-
-ki3 = LINE('su2nu2018@gmail.com','sunu2018')
-ki3.log("Auth Token : " + str(ki3.authToken))
-ki3.log("Timeline Token : " + str(ki3.tl.channelAccessToken))
-
-ki4 = LINE('su6nu2018@gmail.com','sunu2018')
-ki4.log("Auth Token : " + str(ki4.authToken))
-ki4.log("Timeline Token : " + str(ki4.tl.channelAccessToken))
-
-
-ki5 = LINE('su15nu2018@gmail.com','sunu2018')
-ki5.log("Auth Token : " + str(ki5.authToken))
-ki5.log("Timeline Token : " + str(ki5.tl.channelAccessToken))
-
-ki6 = LINE('su5nu2018@gmail.com','sunu2018')
-ki6.log("Auth Token : " + str(ki6.authToken))
-ki6.log("Timeline Token : " + str(ki6.tl.channelAccessToken))
-
-ki7 = LINE('su12nu2p18@gmail.com','sunu2018')
-ki7.log("Auth Token : " + str(ki7.authToken))
-ki7.log("Timeline Token : " + str(ki7.tl.channelAccessToken))
-
-ki8 = LINE('nu6bot2018@gmail.com','sunu2018')
-ki8.log("Auth Token : " + str(ki8.authToken))
-ki8.log("Timeline Token : " + str(ki8.tl.channelAccessToken))
-
-
-ki9 = LINE('su4nu2018@gmail.com','sunu2018')
-ki9.log("Auth Token : " + str(ki9.authToken))
-ki9.log("Timeline Token : " + str(ki9.tl.channelAccessToken))
-
-
-ki10 = LINE('su7nu2018@gmail.com','sunu2018')
-ki10.log("Auth Token : " + str(ki10.authToken))
-ki10.log("Timeline Token : " + str(ki10.tl.channelAccessToken))
-
+#~~~~~~~~~~~เขียนโดย༄۞ꪶꪶꪣꪫꪊุ۞࿐~~~~~~~~~~~~~~~~~~~~~~~~#
 
 print ("Login Succes")
 
@@ -172,10 +136,10 @@ settings = {
     "lang":"JP",
     "Wc": False,
     "Lv": False,
-    "KIEBOT1":"\n[เฮโหลๆๆๆ 😚มาใหม่แก้ผ้าน่ะเเจ๊ะ ไหนๆเอา หำกะหอยมาเบิ่งติ่ละ ❣ ]",
-    "KIEBOT2":"\n[เอ้า ! ไปละติ่ บักปอบ บ๊ายยยยย 🖑]",
-    "tag1":"\n[แทคทำมัย !!นัดเยสเลยมั้ยเตง ^^ โวโวเยเย 😛]",
-    "tag2":"\n[แทคทำมัย ? นัดเยสเลยมั้ยเตง ^^ โวโวเยเย 😛]",
+    "KIEBOT1":"\n[ดีครับคนมาใหม่... ]",
+    "KIEBOT2":"\n[บายยย  แล้วพบกัน..]",
+    "tag1":"\n[ถ้าจะแทคขนาดนี้เอาเราไปทำผัวเลยดีมั๊ย]",
+    "tag2":"\n[ผู้ใช้รายนี้ยังไม่ว่าง ว่าวยุ กรุนาติดต่อใหม่ภายหลังค่ะ ขอบคุณ]",
     "blacklist":{},
     "winvite": False,
     "wblacklist": False,
@@ -191,7 +155,7 @@ settings = {
     "pnharfbot": {},
     "pname": {},
     "pro_name": {},
-    "message":"คุณไม่สามารถเพิ่มเพื่อนได้/nเนื่องจากคุณไม่ได้รับอนุญาติจาก ─•۞✟ℓℓஆՁՃิ۞•─ /nขอบคุณที่แอดมา (◡‿◡✿)\n •*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•\n::: (\_(\ …*…*…*…*…*…*…*…*…::::::::::::::\n*: (=’ :’) :: ออโต้บล็อค  นะจ๊ะ! :::::::::::::::::::::\n•.. (,(”)(”)¤…*…*…*…*…*…*…*…*…:::::::::::\n¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸",
+    "message":"คุณไม่สามารถเพิ่มเพื่อนได้/nเนื่องจากคุณไม่ได้รับอนุญาติจาก ༄۞ꪶꪶꪣꪫꪊุ۞࿐ /nขอบคุณที่แอดมา (◡‿◡✿)\n •*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•\n::: (\_(\ …*…*…*…*…*…*…*…*…::::::::::::::\n*: (=’ :’) :: ออโต้บล็อค  นะจ๊ะ! :::::::::::::::::::::\n•.. (,(”)(”)¤…*…*…*…*…*…*…*…*…:::::::::::\n¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸",
     "comment":"(◡‿◡✿)@ID.LINE [http://line.me/ti/p/p2nGSe0XoX] ",
     "userAgent": [
         "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
@@ -343,7 +307,8 @@ def sendMessageWithMention(to, lineMID):
         logError(error)
  
 def myhelp():
-    myHelp = "✰「  SELFBOT 🌸ℓຫຼี้छՃิ🌸  」✰   " + "\n" \
+    myHelp = "✰「  SELFBOT ༄۞ꪶꪶꪣꪫꪊุ۞࿐ 」✰   " + "\n" \
+                  "🍭" + "\n" + \
                   "🍭「บัญชี」" + "\n" + \
                   "🍭「คำสั่ง1-5」วิทีใช้งานมี5คำสั่ง" + "\n" + \
                   "🍭「Languange」" + "\n" + \
@@ -1475,43 +1440,21 @@ def lineBot(op):
                         except Exception as e:
                             line.sendMessage(msg.to,"พบข้อผิดพลาด (เหตุผล \""+e.reason+"\")")
 
-                if msg.text.lower() == ".me":
-                    msg.contentType = 13
-                    msg.text = None
-                    msg.contentMetadata = {'mid': user1}
-                    line.sendMessage(msg)
-                if msg.text.lower() == ".gift":
-                    msg.contentType = 9
-                    msg.contentMetadata={'PRDID': '',
-                                        'PRDTYPE': 'THEME',
-                                        'MSGTPL': '1'}
-                    msg.text = None
-                    line.sendMessage(msg)
-                if msg.text.lower() == ".giftall":
-                    msg.contentType = 9
-                    msg.contentMetadata={'PRDID': '',
-                                        'PRDTYPE': 'THEME',
-                                        'MSGTPL': '1'}
-                    msg.text = None
-                    ki1.sendMessage(msg)
-                    ki2.sendMessage(msg)
-                    ki3.sendMessage(msg)
-                    ki4.sendMessage(msg)
-                    ki5.sendMessage(msg)
-                    ki6.sendMessage(msg)
-                    ki7.sendMessage(msg)
-                    ki8.sendMessage(msg)
-                    ki9.sendMessage(msg)
-                    ki10.sendMessage(msg)
-                if ".gift " in msg.text.lower():
-                    red = re.compile(re.escape('.gift '),re.IGNORECASE)
-                    themeid = red.sub('',msg.text)
-                    msg.contentType = 9
-                    msg.contentMetadata={'PRDID': themeid,
-                                        'PRDTYPE': 'THEME',
-                                        'MSGTPL': '1'}
-                    msg.text = None
-                    line.sendMessage(msg)						
+ #~~~~~~~~~~~~~~~~~~~~~~~~~~~[༄۞ꪶꪶꪣꪫꪊุ۞࿐]~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+                        elif cmd == "Allแจก":
+                            ki1.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki2.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki3.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki4.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki5.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki6.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki7.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki8.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki9.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                            ki10.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                         elif cmd == "1แจก":
+                            ki1.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                        					
 #==============================================================================#
                 elif text.lower() == 'แทค':
                     group = line.getGroup(msg.to)
@@ -2215,7 +2158,7 @@ def lineBot(op):
                     t1 = "\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xa0\x81\xf4\x80\xa0\x81\xf4\x80\xa0\x81"
                     t2 = "\xf4\x80\x82\xb3\xf4\x8f\xbf\xbf"
                     line.sendMessage(msg.to, t1 + txt + t2)						
-                elif msg.text in ["1ลบสิริ"]:
+                elif msg.text in ["1สิริ"]:
                     if msg.toType == 2:
                         print("Kick Siri")
                         x = ki1.getGroup(msg.to)
@@ -2229,7 +2172,7 @@ def lineBot(op):
                                 except:
                                     pass
 										
-                elif msg.text in ["2ลบสิริ"]:
+                elif msg.text in ["2สิริ"]:
                     if msg.toType == 2:
                         print("Kick Siri")
                         x = ki2.getGroup(msg.to)
@@ -2242,7 +2185,7 @@ def lineBot(op):
                                     k2.kickoutFromGroup(msg.to,[target])
                                 except:
                                     pass
-                elif msg.text in ["3ลบสิริ"]:
+                elif msg.text in ["3สิริ"]:
                     if msg.toType == 2:
                         print("Kick Siri")
                         x = ki3.getGroup(msg.to)
@@ -2291,7 +2234,7 @@ def lineBot(op):
                     line.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียร้อย")
                     print ("Clear Ban")
 
-                elif text.lower() == "มาหอย":
+                elif text.lower() == "All on":
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         group.preventedJoinByTicket = False
@@ -2555,7 +2498,7 @@ def lineBot(op):
                             ki4.leaveGroup(i) 
                             print ("Kicker Leave All group")
 
-                elif "ชื่อใหม่: " in text.lower():
+                elif "อัพชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2565,7 +2508,7 @@ def lineBot(op):
                         line.sendMessage(msg.to,"Update to " + string)
                         print ("Update Name")
 
-                elif "ตัสใหม่: " in msg.text.lower():
+                elif "อัพตัส: " in msg.text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2576,7 +2519,7 @@ def lineBot(op):
                         print ("Update Bio Succes")
 #~~~~~~~~~~~~~~~~~ตัส~~เขียนโดย◇─•۞✟ℓℓஆՁゆຸ۞•─~~~~~~~~~~~~~~#
 
-                elif "ชื่อคิก1: " in text.lower():
+                elif "1ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2588,7 +2531,7 @@ def lineBot(op):
                         print ("Update Name")
 			
 
-                elif "ชื่อคิก2: " in text.lower():
+                elif "2ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2600,7 +2543,7 @@ def lineBot(op):
                         print ("Update Name")
 			
 
-                elif "ชื่อคิก3: " in text.lower():
+                elif "3ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2612,7 +2555,7 @@ def lineBot(op):
                         print ("Update Name")
 			
 
-                elif "ชื่อคิก4: " in text.lower():
+                elif "4ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2624,7 +2567,7 @@ def lineBot(op):
                         print ("Update Name")
 			
 
-                elif "ชื่อคิก5: " in text.lower():
+                elif "5ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2636,7 +2579,7 @@ def lineBot(op):
                         print ("Update Name")
 
 
-                elif "ชื่อคิก6: " in text.lower():
+                elif "6ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2648,7 +2591,7 @@ def lineBot(op):
                         print ("Update Name")
 			
 
-                elif "ชื่อคิก7: " in text.lower():
+                elif "7ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2660,7 +2603,7 @@ def lineBot(op):
                         print ("Update Name")
 			
 
-                elif "ชื่อคิก8: " in text.lower():
+                elif "8ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2672,7 +2615,7 @@ def lineBot(op):
                         print ("Update Name")
 			
 
-                elif "ชื่อคิก9: " in text.lower():
+                elif "9ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2684,7 +2627,7 @@ def lineBot(op):
                         print ("Update Name")
 			
 
-                elif "ชื่อคิก10: " in text.lower():
+                elif "10ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -3197,26 +3140,7 @@ def lineBot(op):
                                 line.sendMessage(to,"เปิดข้อความแจ้งเตือนเมื่อมีคนลบสมาชิกในกลุ่มแล้ว...")
 
 #==============================================================================#   
-                elif "ส่งเสียงกลุ่ม " in msg.text:
-                    bctxt = msg.text.replace(".ส่งเสียงกลุ่ม ", "")
-                    bc = ("เชล...บอท..น้องสุ..บาย")
-                    cb = (bctxt + bc)
-                    tts = gTTS(cb, lang='th', slow=False)
-                    tts.save('tts.mp3')
-                    n = line.getGroupIdsJoined()
-                    for manusia in n:
-                        line.sendAudio(manusia, 'tts.mp3')
 
-                elif "ส่งเสียงแชท " in msg.text:
-                    bctxt = msg.text.replace(".ส่งเสียงแชท ", "")
-                    bc = ("เชลบอทน้องสุ..บาย")
-                    cb = (bctxt + bc)
-                    tts = gTTS(cb, lang='th', slow=False)
-                    tts.save('tts.mp3')
-                    n = line.getAllContactIdsJoined()
-                    for manusia in n:
-                        line.sendAudio(manusia, 'tts.mp3')   
-	
                 elif msg.text in ["ทักเจ็บ เปิด"]:
                     settings["kickMention"] = True
                     line.sendMessage(msg.to,"เปิดระบบเตะคนแท็ก")
