@@ -508,16 +508,16 @@ def lineBot(op):
                     if jumlah <= 10000000:
                         for var in range(0,jumlah):
                             try:
-                                gye.createGroup(str(namagrup), [tgb.mid])
+                                line.createGroup(str(namagrup), [tgb.mid])
                                 for i in grups:
-                                    grup = gye.getGroup(i)
+                                    grup = line.getGroup(i)
                                     if grup.name == namagrup:
-                                        gye.inviteIntoGroup(grup.id, [tgb.mid])
-                                        gye.sendMessage(to, "@! sukses spam grup!\n\nkorban: @!\njumlah: {}\nnama grup: {}".format(jumlah, str(namagrup)), [sender, tgb.mid])
+                                        line.inviteIntoGroup(grup.id, [tgb.mid])
+                                        line.sendMessage(to, "@! sukses spam grup!\n\nkorban: @!\njumlah: {}\nnama grup: {}".format(jumlah, str(namagrup)), [sender, tgb.mid])
                             except Exception as Nigga:
-                                gye.sendMessage(to, str(Nigga))
+                                line.sendMessage(to, str(Nigga))
                             #else:
-                                gye.sendMessage(to, "@! kebanyakan njer!!", [sender])
+                                line.sendMessage(to, "@! kebanyakan njer!!", [sender])
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("owneradd "):
                         key = eval(msg.contentMetadata["MENTION"])
@@ -530,7 +530,7 @@ def lineBot(op):
                                 Owner[target] = True
                                 f=codecs.open('Owner.json','w','utf-8')
                                 json.dump(Owner, f, sort_keys=True, indent=4,ensure_ascii=False)
-                                gye.sendMessage(msg.to,"Owner ☢-Bot-☢\nAdd\nExecuted")
+                                line.sendMessage(msg.to,"Owner ☢-Bot-☢\nAdd\nExecuted")
                             except:
                                 pass
                     
@@ -545,19 +545,19 @@ def lineBot(op):
                                 del Owner[target]
                                 f=codecs.open('Owner.json','w','utf-8')
                                 json.dump(Owner, f, sort_keys=True, indent=4,ensure_ascii=False)
-                                gye.sendMessage(msg.to,"Owner ☢-Bot-☢\nRemove\nExecuted")
+                                line.sendMessage(msg.to,"Owner ☢-Bot-☢\nRemove\nExecuted")
                             except:
                                 pass
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'ownerlist':
                         if Owner == []:
-                            gye.sendMessage(msg.to,"The Ownerlist is empty")
+                            line.sendMessage(msg.to,"The Ownerlist is empty")
                         else:
-                            gye.sendMessage(msg.to,"Tunggu...")
+                            line.sendMessage(msg.to,"Tunggu...")
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Owner List 〙✪═══\n"
                             for mi_d in admin:
-                                mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~aisyagye 〙\n╚═══════════════")
+                                mc += "╠✪ " +line.getContact(mi_d).displayName + "\n"
+                            line.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~nunu_kap123 〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("adminadd "):
                         targets = []
@@ -570,10 +570,10 @@ def lineBot(op):
                                 admin[target] = True
                                 f=codecs.open('admin.json','w','utf-8')
                                 json.dump(admin, f, sort_keys=True, indent=4,ensure_ascii=False)
-                                gye.sendMessage(msg.to,"Admin ☢-Bot-☢\nAdd\nExecuted")
+                                line.sendMessage(msg.to,"Admin ☢-Bot-☢\nAdd\nExecuted")
                                 break
                             except:
-                                gye.sendMessage(msg.to,"Added Target Fail !")
+                                line.sendMessage(msg.to,"Added Target Fail !")
                                 break
                     
                 elif msg.text.lower().startswith("admindel "):
@@ -587,10 +587,10 @@ def lineBot(op):
                                 del admin[target]
                                 f=codecs.open('admin.json','w','utf-8')
                                 json.dump(admin, f, sort_keys=True, indent=4,ensure_ascii=False)
-                                gye.sendMessage(msg.to,"Admin ☢-Bot-☢\nRemove\nExecuted")
+                                line.sendMessage(msg.to,"Admin ☢-Bot-☢\nRemove\nExecuted")
                                 break
                             except:
-                                gye.sendMessage(msg.to,"Deleted Target Fail !")
+                                line.sendMessage(msg.to,"Deleted Target Fail !")
                             break
               #      else:
                #         gye.sendMessage(msg.to,"Owner Permission Required")
@@ -598,109 +598,109 @@ def lineBot(op):
                 elif text.lower() == 'adminlist':
                 #    if msg._from in Owner:
                         if admin == []:
-                            gye.sendMessage(msg.to,"The Adminlist is empty")
+                            line.sendMessage(msg.to,"The Adminlist is empty")
                         else:
-                            gye.sendMessage(msg.to,"Tunggu...")
+                            line.sendMessage(msg.to,"Tunggu...")
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Admin List 〙✪═══\n"
                             for mi_d in admin:
-                                mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~aisyagye 〙\n╚═══════════════")
+                                mc += "╠✪ " +line.getContact(mi_d).displayName + "\n"
+                            line.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~nunu_kap123 〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'protect on':
                         if settings["protect"] == True:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Already On")
+                                line.sendMessage(msg.to,"➲ Protection Already On")
                         else:
                             settings["protect"] = True
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Set To On")
                                 
                 elif text.lower() == 'protect off':
                         if settings["protect"] == False:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Already Off")
                         else:
                             settings["protect"] = False
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Set To Off")
 #----------------------------------------------------------------------------------------                        
                 elif text.lower() == 'qrprotect on':
                         if settings["qrprotect"] == True:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Qr Already On")
+                                line.sendMessage(msg.to,"➲ Protection Qr Already On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Qr Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Qr Set To On")
                         else:
                             settings["qrprotect"] = True
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Qr Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Qr Set To On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Qr Already On")
+                                line.sendMessage(msg.to,"➲ Protection Qr Already On")
                                 
                 elif text.lower() == 'qrprotect off':
                         if settings["qrprotect"] == False:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Qr Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Qr Already Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Qr Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Qr Set To Off")
                         else:
                             settings["qrprotect"] = False
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Qr Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Qr Set To Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Qr Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Qr Already Off")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'inviteprotect on':
                         if settings["inviteprotect"] == True:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Invite Already On")
+                                line.sendMessage(msg.to,"➲ Protection Invite Already On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Invite Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Invite Set To On")
                         else:
                             settings["inviteprotect"] = True
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Invite Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Invite Set To On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Invite Already On")
+                                line.sendMessage(msg.to,"➲ Protection Invite Already On")
                                 
                 elif text.lower() == 'inviteprotect off':
                         if settings["inviteprotect"] == False:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Invite Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Invite Already Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Invite Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Invite Set To Off")
                         else:
                             settings["inviteprotect"] = False
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Invite Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Invite Set To Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Invite Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Invite Already Off")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'cancelprotect on':
                         if settings["cancelprotect"] == True:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already On")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Already On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Set To On")
                         else:
                             settings["cancelprotect"] = True
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Set To On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already On")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Already On")
                                 
                 elif text.lower() == 'cancelprotect off':
                         if settings["cancelprotect"] == False:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Set To Off")
                         else:
                             settings["cancelprotect"] = False
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Set To Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'pro on':
                         settings["protect"] = True
@@ -708,12 +708,12 @@ def lineBot(op):
                         settings["inviteprotect"] = True
                         settings["cancelprotect"] = True
                         settings["join link"] = True
-                        gye.sendMessage(msg.to,"Join link on")
-                        gye.sendMessage(msg.to,"Qrprotect on")
-                        gye.sendMessage(msg.to,"Protect on")
-                        gye.sendMessage(msg.to,"Inviteprotect on")
-                        gye.sendMessage(msg.to,"Cancelprotect on")
-                        gye.sendMessage(msg.to,"➲ All Protect Set To On")
+                        line.sendMessage(msg.to,"Join link on")
+                        line.sendMessage(msg.to,"Qrprotect on")
+                        line.sendMessage(msg.to,"Protect on")
+                        line.sendMessage(msg.to,"Inviteprotect on")
+                        line.sendMessage(msg.to,"Cancelprotect on")
+                        line.sendMessage(msg.to,"➲ All Protect Set To On")
                         		            
                 elif text.lower() == 'pro off':
              #       if msg._from in Owner:
@@ -721,11 +721,11 @@ def lineBot(op):
                         settings["qrprotect"] = False
                         settings["inviteprotect"] = False
                         settings["cancelprotect"] = False
-                        gye.sendMessage(msg.to,"Qrprotect Off")
-                        gye.sendMessage(msg.to,"Protect Off")
-                        gye.sendMessage(msg.to,"Inviteprotect Off")
-                        gye.sendMessage(msg.to,"Cancelprotect Off")
-                        gye.sendMessage(msg.to,"➲ All Protect Set To Modar")
+                        line.sendMessage(msg.to,"Qrprotect Off")
+                        line.sendMessage(msg.to,"Protect Off")
+                        line.sendMessage(msg.to,"Inviteprotect Off")
+                        line.sendMessage(msg.to,"Cancelprotect Off")
+                        line.sendMessage(msg.to,"➲ All Protect Set To Modar")
             #        else:
              #           gye.sendMessage(msg.to,"Just for Owner")
 #-------------------------------------------------------------------------------
