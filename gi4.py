@@ -42,7 +42,7 @@ ki4 = LINE()
 ki4.log("Auth Token : " + str(gye.authToken))
 channelToken = ki4.getChannelResult()
 ki4.log("Channel Token : " + str(channelToken))
-#~~~~~~~~~~~~~เขียนโดย
+#~~~~~~~~~~~~~เขียนโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~~~~~~#
 #line = LINE()
 #ki1 = LINE()
 #ki2 = LINE()
@@ -64,7 +64,7 @@ ki4.log("Channel Token : " + str(channelToken))
 #ki18 = LINE()
 #ki19 = LINE()
 #ki20 = LINE()
-#~~~~~~~~~~~~~~~~~เขียนขึ้นโดย
+#~~~~~~~~~~~~~~~~~เขียนขึ้นโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~~~~#
 KAC = [line,ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10,ki11,ki12,ki13,ki14,ki15,ki16,ki17,ki18,ki19,ki20]
 GUE = [ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10,ki11,ki12,ki13,ki14,ki15,ki16,ki17,ki18,ki19,ki20] 
 lineMID = line.profile.mid
@@ -76,7 +76,7 @@ Bots = [lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,k
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
 admin = ["u104e95aaefb53cf411f77353f6a96ece"]
-
+#~~~~~~~~~~~~~~~~~~~~เขียนขึ้นโด ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~~~~~~#
 lineProfile = line.getProfile()
 ki1Profile = ki1.getProfile()
 ki2Profile = ki2.getProfile()
@@ -98,24 +98,72 @@ ki17Profile = ki17.getProfile()
 ki18Profile = ki18.getProfile()
 ki19Profile = ki19.getProfile()
 ki20Profile = ki20.getProfile()
-
-lineSettings = gye.getSettings()
-aisSettings = ais.getSettings()
+#~~~~~~~~~~~~~~~~~เขียนขึ้นโดย
+lineSettings = line.getSettings()
+ki1Settings = ki1.getSettings()
 ki2Settings = ki2.getSettings()
 ki3Settings = ki3.getSettings()
 ki4Settings = ki4.getSettings()
-
-oepoll = OEPoll(gye)
-oepoll1 = OEPoll(ais)
-oepoll2 = OEPoll(ki2)
-oepoll3 = OEPoll(ki3)
-oepoll4 = OEPoll(ki4)
-
-responsename = gye.getProfile().displayName
-responsename2 = ais.getProfile().displayName
-responsename3 = ki2.getProfile().displayName
-responsename2 = ki3.getProfile().displayName
-responsename3 = ki4.getProfile().displayName
+ki5Settings = ki5.getSettings()
+ki6Settings = ki6.getSettings()
+ki7Settings = ki7.getSettings()
+ki8Settings = ki8.getSettings()
+ki9Settings = ki9.getSettings()
+ki10Settings = ki10.getSettings()
+ki11Settings = ki11.getSettings()
+ki12Settings = ki12.getSettings()
+ki13Settings = ki13.getSettings()
+ki14Settings = ki14.getSettings()
+ki15Settings = ki15.getSettings()
+ki16Settings = ki16.getSettings()
+ki17Settings = ki17.getSettings()
+ki18Settings = ki18.getSettings()
+ki19Settings = ki19.getSettings()
+ki20Settings = ki20.getSettings()
+#~~~~~~~~~~~~~~~~~~เขียนขึ้นโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~#
+oepoll = OEPoll(line)
+oepoll = OEPoll(ki1)
+oepoll = OEPoll(ki2)
+oepoll = OEPoll(ki3)
+oepoll = OEPoll(ki4)
+oepoll = OEPoll(ki5)
+oepoll = OEPoll(ki6)
+oepoll = OEPoll(ki7)
+oepoll = OEPoll(ki8)
+oepoll = OEPoll(ki9)
+oepoll = OEPoll(ki10)
+oepoll = OEPoll(ki11)
+oepoll = OEPoll(ki12)
+oepoll = OEPoll(ki13)
+oepoll = OEPoll(ki14)
+oepoll = OEPoll(ki15)
+oepoll = OEPoll(ki16)
+oepoll = OEPoll(ki17)
+oepoll = OEPoll(ki18)
+oepoll = OEPoll(ki19)
+oepoll = OEPoll(ki20)
+#~~~~~~~~~~~~~~เขียนขึ้นโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~~~~~~~#
+responsename = line.getProfile().displayName
+responsename = ki1.getProfile().displayName
+responsename = ki2.getProfile().displayName
+responsename = ki3.getProfile().displayName
+responsename = ki4.getProfile().displayName
+responsename = ki5.getProfile().displayName
+responsename = ki6.getProfile().displayName
+responsename = ki7.getProfile().displayName
+responsename = ki8.getProfile().displayName
+responsename = ki9.getProfile().displayName
+responsename = ki10.getProfile().displayName
+responsename = ki11.getProfile().displayName
+responsename = ki12.getProfile().displayName
+responsename = ki13.getProfile().displayName
+responsename = ki14.getProfile().displayName
+responsename = ki15.getProfile().displayName
+responsename = ki16.getProfile().displayName
+responsename = ki17.getProfile().displayName
+responsename = ki18.getProfile().displayName
+responsename = ki19.getProfile().displayName
+responsename = ki20.getProfile().displayName
 #==============================================================================#
 
 
@@ -133,9 +181,9 @@ myProfile = {
 	"pictureStatus": ""
 }
 
-myProfile["displayName"] = gyeProfile.displayName
-myProfile["statusMessage"] = gyeProfile.statusMessage
-myProfile["pictureStatus"] = gyeProfile.pictureStatus
+myProfile["displayName"] = lineProfile.displayName
+myProfile["statusMessage"] = lineProfile.statusMessage
+myProfile["pictureStatus"] = lineProfile.pictureStatus
 
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
@@ -152,7 +200,7 @@ def restartBot():
     os.execl(python, python, *sys.argv)
     
 def logError(text):
-    gye.log("[ ERROR ] " + str(text))
+    line.log("[ ERROR ] " + str(text))
     time_ = datetime.now()
     with open("errorLog.txt","a") as error:
         error.write("\n[%s] %s" % (str(time), text))
@@ -161,7 +209,7 @@ def sendMessageWithMention(to, mid):
     try:
         aa = '{"S":"0","E":"3","M":'+json.dumps(mid)+'}'
         text_ = '@x '
-        gye.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
+        line.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
     except Exception as error:
         logError(error)
         
@@ -317,20 +365,20 @@ def lineBot(op):
             if msg.contentType == 13:
                 if settings["wblack"] == True:
                     if msg.contentMetadata["mid"] in settings["commentBlack"]:
-                        gye.sendMessage(msg.to,"sudah masuk daftar hitam")
+                        line.sendMessage(msg.to,"sudah masuk daftar hitam")
                         settings["wblack"] = False
                     else:
                         settings["commentBlack"][msg.contentMetadata["mid"]] = True
                         settings["wblack"] = False
-                        gye.sendMessage(msg.to,"Itu tidak berkomentar")
+                        line.sendMessage(msg.to,"Itu tidak berkomentar")
                 elif settings["dblack"] == True:
                     if msg.contentMetadata["mid"] in settings["commentBlack"]:
                         del settings["commentBlack"][msg.contentMetadata["mid"]]
-                        gye.sendMessage(msg.to,"Done")
+                        line.sendMessage(msg.to,"Done")
                         settings["dblack"] = False
                     else:
                         settings["dblack"] = False
-                        gye.sendMessage(msg.to,"Tidak ada dalam daftar hitam")
+                        line.sendMessage(msg.to,"Tidak ada dalam daftar hitam")
 #-------------------------------------------------------------------------------
                 elif settings["wblacklist"] == True:
                     if msg.contentMetadata["mid"] in settings["blacklist"]:
