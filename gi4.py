@@ -434,28 +434,28 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'sp':
                     start = time.time()
-                    gye.sendMessage(to, "Cek Speed...")
+                    line.sendMessage(to, "Cek Speed...")
                     elapsed_time = time.time() - start
-                    gye.sendMessage(to,format(str(elapsed_time)))
+                    line.sendMessage(to,format(str(elapsed_time)))
                 elif text.lower() == 'restart':    
-                    gye.sendMessage(to, "Please Wait...")
+                    line.sendMessage(to, "Please Wait...")
                     time.sleep(5)
-                    gye.sendMessage(to, "Restart Sukses")
+                    line.sendMessage(to, "Restart Sukses")
                     restartBot()
                 elif text.lower() == 'runtime':
                     timeNow = time.time()
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
-                    gye.sendMessage(to, "login bot selama {}".format(str(runtime)))
+                    line.sendMessage(to, "login bot selama {}".format(str(runtime)))
                 elif text.lower() == 'about':
                     try:
                         arr = []
                         owner = "u104e95aaefb53cf411f77353f6a96ece"
-                        creator = gye.getContact(owner)
-                        contact = gye.getContact(gyeMID)
-                        grouplist = gye.getGroupIdsJoined()
-                        contactlist = gye.getAllContactIds()
-                        blockedlist = gye.getBlockedContactIds()
+                        creator = line.getContact(owner)
+                        contact = line.getContact(lineMID)
+                        grouplist = line.getGroupIdsJoined()
+                        contactlist = line.getAllContactIds()
+                        blockedlist = line.getBlockedContactIds()
                         ret_ = "╭════════╬♥╬════════╮\nStatus Bots\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
                         ret_ += "\n╠ akun : {}".format(contact.displayName)
                         ret_ += "\n╠ group : {}".format(str(len(grouplist)))
@@ -465,9 +465,9 @@ def lineBot(op):
                         ret_ += "\n╠ Version : Premium"
                         ret_ += "\n╠ Creator : {}".format(creator.displayName)
                         ret_ += "\n╰════════╬♥╬════════╯\n\nGYEVHA BOTS╭════════╬♥╬════════╮\n╰════════╬♥╬════════╯"
-                        gye.sendMessage(to, str(ret_))
+                        line.sendMessage(to, str(ret_))
                     except Exception as e:
-                        gye.sendMessage(msg.to, str(e))
+                        line.sendMessage(msg.to, str(e))
 #==============================================================================#
                 elif text.lower() == 'status':
                     try:
@@ -493,9 +493,9 @@ def lineBot(op):
                         if settings["detectMention"] == True: ret_ += "\n║͜͡☆➣ Detect Mention ✅"
                         else: ret_ += "\n║͜͡☆➣ Detect Mention ❌"
                         ret_ += "\n╰════════╬♥╬════════╯\n╭════════╬♥╬════════╮\n  ║͜͡☆➣ ♥ GYEVHA BOTS ♥\n╰════════╬♥╬════════╯"
-                        gye.sendMessage(to, str(ret_))
+                        line.sendMessage(to, str(ret_))
                     except Exception as e:
-                        gye.sendMessage(msg.to, str(e))
+                        line.sendMessage(msg.to, str(e))
                         
                 elif msg.text.lower().startswith("spaminvite "):
                    #if msg._from in admin:
@@ -503,8 +503,8 @@ def lineBot(op):
                     userid = dan[0]
                     namagrup = dan[0]
                     jumlah = int(dan[0])
-                    grups = gye.groups
-                    tgb = gye.findContactsByUserid(userid)
+                    grups = line.groups
+                    tgb = line.findContactsByUserid(userid)
                     if jumlah <= 10000000:
                         for var in range(0,jumlah):
                             try:
