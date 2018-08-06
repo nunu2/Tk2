@@ -1,41 +1,32 @@
-# -*- coding: utf-8 -*-
-
-from gyevha import *
-from datetime import datetime
+# -*- ─•۞✟ℓℓஆՁゆຸ۞•─ -*-
+from linepy import *
+from akad.ttypes import *
+from multiprocessing import Pool, Process
 from time import sleep
+from datetime import datetime
 from bs4 import BeautifulSoup
 from humanfriendly import format_timespan, format_size, format_number, format_length
+#import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib.request, urllib.parse, urllib.error, urllib.parse,base64,antolib,subprocess,unicodedata,GACSender
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse
 from gtts import gTTS
+import html5lib,shutil
+import wikipedia,goslate
+import youtube_dl, pafy, asyncio
+from multiprocessing import Pool, Process
 from googletrans import Translator
- 
-# Ini Untuk Login Via Lik Dan Via Emal
-#gye = LINE()
-#gye = LINE("Email","Password")
-#gye.log("Auth Token : " + str(gye.authToken))
-#channelToken = gye.getChannelResult()
-#gye.log("Channel Token : " + str(channelToken))
 
-# Silahkan Edit Sesukamu
-# Asalkan Rapih Dan Respon
-# jika ingin login Via qr Ganti Saja
-# Atau Login Via Emal
-# Mudeng Orang kalo Ra Mudeng
-# Sungguh Terlalu
-# Jangan Lupa Add Admin 
-# id Line ( aisyagye )
 #==============================================================================#
 botStart = time.time()
-#kalo mau login code qr disini pake
-gye = LINE()
-gye.log("Auth Token : " + str(gye.authToken))
-channelToken = gye.getChannelResult()
-gye.log("Channel Token : " + str(channelToken))
+#==============================================================================#
+line = LINE()
+line.log("Auth Token : " + str(line.authToken))
+channelToken = line.getChannelResult()
+line.log("Channel Token : " + str(channelToken))
 
-ais = LINE()
-ais.log("Auth Token : " + str(ais.authToken))
-channelToken = ais.getChannelResult()
-ais.log("Channel Token : " + str(channelToken))
+ki1 = LINE()
+ki1.log("Auth Token : " + str(ki1.authToken))
+channelToken = ki1.getChannelResult()
+ki1.log("Channel Token : " + str(channelToken))
 
 ki2 = LINE()
 ki2.log("Auth Token : " + str(ki2.authToken))
@@ -51,35 +42,31 @@ ki4 = LINE()
 ki4.log("Auth Token : " + str(gye.authToken))
 channelToken = ki4.getChannelResult()
 ki4.log("Channel Token : " + str(channelToken))
-
-#kalo mau login menggunakan token
-#gunakan disini hapus tanda pagarnya 
-#yg atas dinpagar atau bisa juga token di atas 
-#di dalam tanda LINE ("TOKEN MU ")
+#~~~~~~~~~~~~~เขียนโดย
 #gye = LINE("Et6qM8UeTce5bGsZG4te.ee6vQU/1ppqr93nt9QLUZG.b5fsCbuxW7zZRtrK5U/74k/53Abd5dWPxfdtLy9bL9I=")
 #ais = LINE("Etska0dbjsHvPgZKwmj9.EikS5M3O+L4fOqxjjVgLsq.KlWfvmGVaXdM0yvKM8WGKARpcbAbiKVF9yORPt8QBJw=")
 #ki2 = LINE("EtQsqzdJMWn73m72Gup0.OdjJmVnqXLeaZxpJzxDMOa.Z+6ApCht+0H1NeyX50QMD0Yq8oIhYyJ14Yg2yoM/tfc=")
 #ki3 = LINE("EtDOOeYj4Rvl5PVfOEaa.ETpCu8czFapUIJQDqIA82G.tcOaI+VmHhWwMbyDL/7yXupWfdIvUJh80yWzu/UJXp8=")
 #ki4 = LINE("EtWyu42OHWKSaxPHY3yd.jTri3xzV4E2Z1xvWxjTrRq.s1oy5gbYMT2haZV7l6yzV0bp5gONcnu+bGSSJ1mbT0c=")
 
-KAC = [gye,ais,ki2,ki3,ki4]
-GUE = [ais,ki2,ki3,ki4] # ini jangan luh hapus peak ini fungsi Ciak alias kick
+KAC = [line,ki1,ki2,ki3,ki4]
+GUE = [ki1,ki2,ki3,ki4] # ini jangan luh hapus peak ini fungsi Ciak alias kick
 #maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
-gyeMID = gye.profile.mid
-aisMID = ais.profile.mid
+lineMID = line.profile.mid
+ki1MID = ki1.profile.mid
 ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
 ki4MID = ki4.profile.mid
-Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
+Bots = [lineMID,ki1MID,ki2MID,ki3MID,ki4MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
 admin = ["u104e95aaefb53cf411f77353f6a96ece"]
 
-gyeProfile = gye.getProfile()
-aisProfile = ais.getProfile()
+lineProfile = line.getProfile()
+ki1Profile = ki1.getProfile()
 ki2Profile = ki2.getProfile()
-ki2Profile = ki3.getProfile()
-ki2Profile = ki4.getProfile()
+ki3Profile = ki3.getProfile()
+ki4Profile = ki4.getProfile()
 
 lineSettings = gye.getSettings()
 aisSettings = ais.getSettings()
