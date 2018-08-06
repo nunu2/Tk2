@@ -731,50 +731,50 @@ def lineBot(op):
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Add")
+                    line.sendMessage(to, "Berhasil mengaktifkan Auto Add")
                 elif text.lower() == 'autoadd off':
                     settings["autoAdd"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Add")
+                    line.sendMessage(to, "Berhasil menonaktifkan Auto Add")
                 elif text.lower() == 'autojoin on':
              #     if msg._from in Owner:    
                     settings["autoJoin"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Join")
+                    line.sendMessage(to, "Berhasil mengaktifkan Auto Join")
                 elif text.lower() == 'autojoin off':
                 #  if msg._from in Owner:    
                     settings["autoJoin"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Join")
+                    line.sendMessage(to, "Berhasil menonaktifkan Auto Join")
                 elif text.lower() == 'autoleave on':
                #   if msg._from in Owner:
                     settings["autoLeave"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Leave")
+                    line.sendMessage(to, "Berhasil mengaktifkan Auto Leave")
                 elif text.lower() == 'autoleave off':
              #     if msg._from in Owner:
                     settings["autoLeave"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Leave")
+                    line.sendMessage(to, "Berhasil menonaktifkan Auto Leave")
                 elif text.lower() == 'autoread on':
                     settings["autoRead"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Read")
+                    line.sendMessage(to, "Berhasil mengaktifkan Auto Read")
                 elif text.lower() == 'autoread off':
                     settings["autoRead"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Read")
+                    line.sendMessage(to, "Berhasil menonaktifkan Auto Read")
                 elif text.lower() == 'checksticker on':
                     settings["checkSticker"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Check Details Sticker")
+                    line.sendMessage(to, "Berhasil mengaktifkan Check Details Sticker")
                 elif text.lower() == 'checksticker off':
                     settings["checkSticker"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Check Details Sticker")
+                    line.sendMessage(to, "Berhasil menonaktifkan Check Details Sticker")
                 elif text.lower() == 'detectmention on':
                     settings["datectMention"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Detect Mention")
+                    line.sendMessage(to, "Berhasil mengaktifkan Detect Mention")
                 elif text.lower() == 'detectmention off':
                     settings["datectMention"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Detect Mention")
+                    line.sendMessage(to, "Berhasil menonaktifkan Detect Mention")
                 elif text.lower() == 'join link on':
                     settings["autoJoinTicket"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Join Link")
+                    line.sendMessage(to, "Berhasil mengaktifkan Auto Join Link")
                 elif text.lower() == 'join link off':
                     settings["autoJoinTicket"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                    
+                    line.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                    
 #==============================================================================#
                 elif msg.text.lower() == 'cekk':
                         gye.sendContact(to, gyeMID)
@@ -810,29 +810,29 @@ def lineBot(op):
                     gye.updateGroup(G)
                     G.preventedJoinByTicket(G)
                     gye.updateGroup(G)
-                
+#~~~~~~~~~~~~~~~~~~~~~~~~~เขียนโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐  ~~~~~~~~~~~~~~~~~~~~~~~~~~~#             
                 elif text.lower() == 'me':
                     sendMessageWithMention(to, gyeMID)
-                    gye.sendContact(to, gyeMID)
-                    gye.sendMessage(msg.to,"➲ Jangan Songong Pake Sc Orang")
+                    line.sendContact(to, lineMID)
+                    line.sendMessage(msg.to,"➲ Jangan Songong Pake Sc Orang")
                 elif text.lower() == 'mymid':
-                    gye.sendMessage(msg.to,"[MID]\n" +  gyeMID)
+                    line.sendMessage(msg.to,"[MID]\n" +  lineMID)
                 elif text.lower() == 'myname':
-                    me = gye.getContact(gyeMID)
-                    gye.sendMessage(msg.to,"[DisplayName]\n" + me.displayName)
+                    me = line.getContact(lineMID)
+                    line.sendMessage(msg.to,"[DisplayName]\n" + me.displayName)
                 elif text.lower() == 'mybio':
-                    me = gye.getContact(gyeMID)
-                    gye.sendMessage(msg.to,"[StatusMessage]\n" + me.statusMessage)
+                    me = line.getContact(lineMID)
+                    line.sendMessage(msg.to,"[StatusMessage]\n" + me.statusMessage)
                 elif text.lower() == 'mypicture':
-                    me = gye.getContact(gyeMID)
-                    gye.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/" + me.pictureStatus)
+                    me = line.getContact(lineMID)
+                    line.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/" + me.pictureStatus)
                 elif text.lower() == 'myvideoprofile':
-                    me = gye.getContact(gyeMID)
-                    gye.sendVideoWithURL(msg.to,"http://dl.profile.line-cdn.net/" + me.pictureStatus + "/vp")
+                    me = line.getContact(lineMID)
+                    line.sendVideoWithURL(msg.to,"http://dl.profile.line-cdn.net/" + me.pictureStatus + "/vp")
                 elif text.lower() == 'mycover':
-                    me = gye.getContact(gyeMID)
-                    cover = gye.getProfileCoverURL(gyeMID)    
-                    gye.sendImageWithURL(msg.to, cover)
+                    me = line.getContact(lineMID)
+                    cover = line.getProfileCoverURL(lineMID)    
+                    line.sendImageWithURL(msg.to, cover)
                 elif msg.text.lower().startswith("stealcontact "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
@@ -843,9 +843,9 @@ def lineBot(op):
                             if mention["M"] not in lists:
                                 lists.append(mention["M"])
                         for ls in lists:
-                            contact = gye.getContact(ls)
+                            contact = line.getContact(ls)
                             mi_d = contact.mid
-                            gye.sendContact(msg.to, mi_d)
+                            line.sendContact(msg.to, mi_d)
                 elif msg.text.lower().startswith("midnya "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
@@ -858,7 +858,7 @@ def lineBot(op):
                         ret_ = "[ Mid User ]"
                         for ls in lists:
                             ret_ += "\n{}" + ls
-                        gye.sendMessage(msg.to, str(ret_))
+                        line.sendMessage(msg.to, str(ret_))
                 elif msg.text.lower().startswith("stealname "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
@@ -869,8 +869,8 @@ def lineBot(op):
                             if mention["M"] not in lists:
                                 lists.append(mention["M"])
                         for ls in lists:
-                            contact = gye.getContact(ls)
-                            gye.sendMessage(msg.to, "[ Display Name ]\n" + contact.displayName)
+                            contact = line.getContact(ls)
+                            line.sendMessage(msg.to, "[ Display Name ]\n" + contact.displayName)
                 elif msg.text.lower().startswith("stealbio "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
