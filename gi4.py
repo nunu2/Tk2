@@ -43,21 +43,36 @@ ki4.log("Auth Token : " + str(gye.authToken))
 channelToken = ki4.getChannelResult()
 ki4.log("Channel Token : " + str(channelToken))
 #~~~~~~~~~~~~~เขียนโดย
-#gye = LINE("Et6qM8UeTce5bGsZG4te.ee6vQU/1ppqr93nt9QLUZG.b5fsCbuxW7zZRtrK5U/74k/53Abd5dWPxfdtLy9bL9I=")
-#ais = LINE("Etska0dbjsHvPgZKwmj9.EikS5M3O+L4fOqxjjVgLsq.KlWfvmGVaXdM0yvKM8WGKARpcbAbiKVF9yORPt8QBJw=")
-#ki2 = LINE("EtQsqzdJMWn73m72Gup0.OdjJmVnqXLeaZxpJzxDMOa.Z+6ApCht+0H1NeyX50QMD0Yq8oIhYyJ14Yg2yoM/tfc=")
-#ki3 = LINE("EtDOOeYj4Rvl5PVfOEaa.ETpCu8czFapUIJQDqIA82G.tcOaI+VmHhWwMbyDL/7yXupWfdIvUJh80yWzu/UJXp8=")
-#ki4 = LINE("EtWyu42OHWKSaxPHY3yd.jTri3xzV4E2Z1xvWxjTrRq.s1oy5gbYMT2haZV7l6yzV0bp5gONcnu+bGSSJ1mbT0c=")
-
-KAC = [line,ki1,ki2,ki3,ki4]
-GUE = [ki1,ki2,ki3,ki4] # ini jangan luh hapus peak ini fungsi Ciak alias kick
-#maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
+#line = LINE()
+#ki1 = LINE()
+#ki2 = LINE()
+#ki3 = LINE()
+#ki4 = LINE()
+#ki5 = LINE()
+#ki6 = LINE()
+#ki7 = LINE()
+#ki8 = LINE()
+#ki9 = LINE()
+#ki10 = LINE()
+#ki11 = LINE()
+#ki12 = LINE()
+#ki13 = LINE()
+#ki14 = LINE()
+#ki15 = LINE()
+#ki16 = LINE()
+#ki17 = LINE()
+#ki18 = LINE()
+#ki19 = LINE()
+#ki20 = LINE()
+#~~~~~~~~~~~~~~~~~เขียนขึ้นโดย
+KAC = [line,ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10,ki11,ki12,ki13,ki14,ki15,ki16,ki17,ki18,ki19,ki20]
+GUE = [ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10,ki11,ki12,ki13,ki14,ki15,ki16,ki17,ki18,ki19,ki20] 
 lineMID = line.profile.mid
 ki1MID = ki1.profile.mid
 ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
 ki4MID = ki4.profile.mid
-Bots = [lineMID,ki1MID,ki2MID,ki3MID,ki4MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
+Bots = [lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID,ki11MID,ki12MID,ki13MID,ki14MID,ki15MID,ki16MID,ki17MID,ki18MID,ki19MID,ki20MID]
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
 admin = ["u104e95aaefb53cf411f77353f6a96ece"]
