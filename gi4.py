@@ -382,21 +382,21 @@ def lineBot(op):
 #-------------------------------------------------------------------------------
                 elif settings["wblacklist"] == True:
                     if msg.contentMetadata["mid"] in settings["blacklist"]:
-                        gye.sendMessage(msg.to,"sudah masuk daftar hitam")
+                        line.sendMessage(msg.to,"sudah masuk daftar hitam")
                         settings["wblacklist"] = False
                     else:
                         settings["blacklist"][msg.contentMetadata["mid"]] = True
                         settings["wblacklist"] = False
-                        gye.sendMessage(msg.to,"Done")
+                        line.sendMessage(msg.to,"Done")
                         
                 elif settings["dblacklist"] == True:
                     if msg.contentMetadata["mid"] in settings["blacklist"]:
                         del settings["blacklist"][msg.contentMetadata["mid"]]
-                        gye.sendMessage(msg.to,"Done")
+                        line.sendMessage(msg.to,"Done")
                         settings["dblacklist"] = False
                     else:
                         settings["dblacklist"] = False
-                        gye.sendMessage(msg.to,"Done")
+                        line.sendMessage(msg.to,"Done")
                         
                        
 #-------------------------------------------------------------------------------
@@ -408,7 +408,7 @@ def lineBot(op):
             receiver = msg.to
             sender = msg._from
             if msg.toType == 0:
-                if sender != gye.profile.mid:
+                if sender != line.profile.mid:
                     to = sender
                 else:
                     to = receiver
@@ -420,17 +420,17 @@ def lineBot(op):
 #==============================================================================#
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
-                    gye.sendMessage(to, str(helpMessage))
-                    gye.sendContact(to, "u104e95aaefb53cf411f77353f6a96ece")
-                    gye.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
+                    line.sendMessage(to, str(helpMessage))
+                    line.sendContact(to, "u104e95aaefb53cf411f77353f6a96ece")
+                    line.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
                 elif text.lower() == 'help 1':
                     helpTextToSpeech = helptexttospeech()
-                    gye.sendMessage(to, str(helpTextToSpeech))
-                    gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
+                    line.sendMessage(to, str(helpTextToSpeech))
+                    line.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
                 elif text.lower() == 'help 2':
                     helpTranslate = helptranslate()
-                    gye.sendMessage(to, str(helpTranslate))
-                    gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
+                    line.sendMessage(to, str(helpTranslate))
+                    line.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
 #==============================================================================#
                 elif text.lower() == 'sp':
                     start = time.time()
