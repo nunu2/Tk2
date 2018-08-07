@@ -47,9 +47,9 @@ ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
 ki4MID = ki4.profile.mid
 Bots = [lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID]
-creator = ["u104e95aaefb53cf411f77353f6a96ece"]
-Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
-admin = ["u104e95aaefb53cf411f77353f6a96ece"]
+creator = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
+Owner = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
+admin = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
 #~~~~~~~~~~~~~~~~~~~~เขียนขึ้นโด ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~~~~~~#
 lineProfile = line.getProfile()
 ki1Profile = ki1.getProfile()
@@ -355,7 +355,7 @@ def lineBot(op):
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     line.sendMessage(to, str(helpMessage))
-                    line.sendContact(to, "u104e95aaefb53cf411f77353f6a96ece")
+                    line.sendContact(to, "ue32b11986d8e9e5cf70b642cf7ba88ff")
                     line.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
                 elif text.lower() == 'help 1':
                     helpTextToSpeech = helptexttospeech()
