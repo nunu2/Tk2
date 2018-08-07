@@ -728,7 +728,7 @@ def lineBot(op):
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)
-	            ki5.leaveGroup(msg.to)
+                    ki5.leaveGroup(msg.to)
                     ki6.leaveGroup(msg.to)
                     ki7.leaveGroup(msg.to)
                     ki8.leaveGroup(msg.to)	
