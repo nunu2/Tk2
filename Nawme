@@ -23,8 +23,6 @@ line.log("Auth Token : " + str(line.authToken))
 channelToken = line.getChannelResult()
 line.log("Channel Token : " + str(channelToken))
 
-ki1 = LINE()
-ki1.log("Auth Token : " + str(ki1.authToken))
 channelToken = ki1.getChannelResult()
 ki1.log("Channel Token : " + str(channelToken))
 
