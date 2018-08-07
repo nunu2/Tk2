@@ -758,10 +758,10 @@ def lineBot(op):
                     ki3.acceptGroupInvitationByTicket(msg.to,Ticket)
                     ki4.acceptGroupInvitationByTicket(msg.to,Ticket)
                     ki5.acceptGroupInvitationByTicket(msg.to,Ticket)
-                    ki6.acceptGroupInvitationByTicket(msg.to,Ticket)                    
+                    ki6.acceptGroupInvitationByTicket(msg.to,Ticket)    
                     ki7.acceptGroupInvitationByTicket(msg.to,Ticket)
-	            ki8.acceptGroupInvitationByTicket(msg.to,Ticket)
-                    ki9.acceptGroupInvitationByTicket(msg.to,Ticket)                    
+                    ki8.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    ki9.acceptGroupInvitationByTicket(msg.to,Ticket)	
                     ki10.acceptGroupInvitationByTicket(msg.to,Ticket)	    
                     G = line.getGroup(msg.to)
                     G.preventedJoinByTicket = True
