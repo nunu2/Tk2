@@ -744,8 +744,8 @@ def lineBot(op):
                     ki6.leaveGroup(msg.to)
                     ki7.leaveGroup(msg.to)
                     ki8.leaveGroup(msg.to)
-                    ki9.leaveGroup(msg.to) 
-	            ki10.leaveGroup(msg.to) 	   
+                    ki9.leaveGroup(msg.to)
+                    ki10.leaveGroup(msg.to)   
                 elif text.lower() in ["halo"]:    
                     G = line.getGroup(msg.to)
                     ginfo = line.getGroup(msg.to)
