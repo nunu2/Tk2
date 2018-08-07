@@ -1935,10 +1935,7 @@ def lineBot(op):
                         line.createGroup("🐾ъମਫ਼ีีઈஇ ମู Ҩန❍🐾",[key])
                         line.sendText(msg,to,"🐾ъମਫ਼ีีઈஇ ମู Ҩန❍🐾")
 #==============================================================================#   
-#~~~~~~~~~~~~~~~~~~จัดเรียงโดย[─•۞✟ℓℓஆՁゆຸ۞•─]~~~~~~~~~~~~~~~#
-
-              
-
+#~~~~~~~~~~~~~~~~~~จัดเรียงโดย[─•۞✟ℓℓஆՁゆຸ۞•─]~~~~~~~~~~~~~~
                 elif text.lower() == 'kalender':
                     tz = pytz.timezone("Asia/Makassar")
                     timeNow = datetime.now(tz=tz)
@@ -2242,8 +2239,7 @@ def lineBot(op):
                     settings["blacklist"] = {}
                     line.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียร้อย")
                     print ("Clear Ban")
-
-                elif text.lower() == "มาหอย":
+                elif text.lower() == "All":
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         group.preventedJoinByTicket = False
@@ -2483,7 +2479,7 @@ def lineBot(op):
                                 pass
                                 print ("Remove Chat Kicker")
 
-                elif text.lower() == "หนีหอย":
+                elif text.lower() == "Bye":
                     if msg._from in Family:
                         ki1.leaveGroup(msg.to)
                         ki2.leaveGroup(msg.to)
@@ -2505,9 +2501,15 @@ def lineBot(op):
                             ki2.leaveGroup(i)
                             ki3.leaveGroup(i)
                             ki4.leaveGroup(i) 
-                            print ("Kicker Leave All group")
+                            ki5.leaveGroup(i)
+                            ki6.leaveGroup(i)
+                            ki7.leaveGroup(i)
+                            ki8.leaveGroup(i) 
+                            ki9.leaveGroup(i)
+                            ki10.leaveGroup(i)
+                            print ("คิกออกทุกกลุ่ม")
 
-                elif "ชื่อใหม่: " in text.lower():
+                elif "ชื่อ: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2517,7 +2519,7 @@ def lineBot(op):
                         line.sendMessage(msg.to,"Update to " + string)
                         print ("Update Name")
 
-                elif "ตัสใหม่: " in msg.text.lower():
+                elif "ตัส: " in msg.text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
@@ -2648,43 +2650,6 @@ def lineBot(op):
                         print ("Update Name")
 
 #~~~~~~~~~~~~~~~~~~~เขียนโดย◇─•۞✟ℓℓஆՁゆຸ۞•─~~~~~~~~~~~~~~#
-                elif "ชื่อคิก: " in text.lower():
-                    if msg._from in Family:
-                        proses = text.split(": ")
-                        string = text.replace(proses[0] + ": ","")
-                        profile_A = ki1.getProfile()
-                        profile_B = ki2.getProfile()
-                        profile_C = ki3.getProfile()
-                        profile_D = ki4.getProfile()
-                        profile_E = ki5.getProfile()
-                        profile_F = ki6.getProfile()
-                        profile_G = ki7.getProfile()
-                        profile_H = ki8.getProfile()
-                        profile_I = ki9.getProfile()
-                        profile_J = ki10.getProfile()
-                        profile_A.displayName = string
-                        profile_B.displayName = string
-                        profile_C.displayName = string
-                        profile_D.displayName = string
-                        profile_E.displayName = string
-                        profile_F.displayName = string
-                        profile_G.displayName = string
-                        profile_H.displayName = string
-                        profile_I.displayName = string
-                        profile_J.displayName = string
-                        ki.updateProfile(profile_A)
-                        kk.updateProfile(profile_B)
-                        kc.updateProfile(profile_C)
-                        ke.updateProfile(profile_D) 
-                        ki.updateProfile(profile_E)
-                        kk.updateProfile(profile_F)
-                        kc.updateProfile(profile_G)
-                        ke.updateProfile(profile_H) 
-                        ki.updateProfile(profile_I)
-                        kk.updateProfile(profile_J)
-                        line.sendMessage(msg.to,"Update Name All Kicker to : " + string)
-                        print ("Update Name All Kicker")
-
                 elif "ตัสคิก: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
@@ -2763,7 +2728,7 @@ def lineBot(op):
                     ki4.sendMessage(msg.to,"4(⊙_⊙)")   
                     ki5.sendMessage(msg.to,"5(⊙_⊙)")
                     ki6.sendMessage(msg.to,"6(⊙_⊙)")
-                    ki7.sendMessage(msg.to,"5(⊙_⊙)")
+                    ki7.sendMessage(msg.to,"7(⊙_⊙)")
                     ki8.sendMessage(msg.to,"8(⊙_⊙)") 
                     ki9.sendMessage(msg.to,"9(⊙_⊙)")
                     ki10.sendMessage(msg.to,"10(⊙_⊙)")
