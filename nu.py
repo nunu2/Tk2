@@ -23,54 +23,30 @@ line.log("Auth Token : " + str(line.authToken))
 channelToken = line.getChannelResult()
 line.log("Channel Token : " + str(channelToken))
 
-channelToken = ki1.getChannelResult()
-ki1.log("Channel Token : " + str(channelToken))
-
-ki2 = LINE()
-ki2.log("Auth Token : " + str(ki2.authToken))
-channelToken = ki2.getChannelResult()
-ki2.log("Channel Token : " + str(channelToken))
-
-ki3 = LINE()
-ki3.log("Auth Token : " + str(ki3.authToken))
-channelToken = ki3.getChannelResult()
-ki3.log("Channel Token : " + str(channelToken))
-
-ki4 = LINE()
-ki4.log("Auth Token : " + str(gye.authToken))
-channelToken = ki4.getChannelResult()
-ki4.log("Channel Token : " + str(channelToken))
 #~~~~~~~~~~~~~เขียนโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~~~~~~#
 #line = LINE()
-#ki1 = LINE()
-#ki2 = LINE()
-#ki3 = LINE()
-#ki4 = LINE()
-#ki5 = LINE()
-#ki6 = LINE()
-#ki7 = LINE()
-#ki8 = LINE()
-#ki9 = LINE()
-#ki10 = LINE()
-#ki11 = LINE()
-#ki12 = LINE()
-#ki13 = LINE()
-#ki14 = LINE()
-#ki15 = LINE()
-#ki16 = LINE()
-#ki17 = LINE()
-#ki18 = LINE()
-#ki19 = LINE()
-#ki20 = LINE()
+#line = LINE('susu76917@gmail.com','nunu_kap2018')
+ki1 = LINE('nu2bot2018@gmail.com','nunu_kap2018')
+ki2 = LINE('nu3bot2018@gmail.com','nunu_kap2018')
+ki3 = LINE('nu4bot2018@gmail.com','nunu_kap2018')
+ki4 = LINE('nu8bot2018@gmail.com','nunu_kap2018')
+ki5 = LINE('nu10bot2018@gmail.com','nunu_kap2018')
+ki6 = LINE('bot1nu2018@gmail.com','nunu_kap2018')
+ki7 = LINE('bot2nu2018@gmail.com','nunu_kap2018')
+ki8 = LINE('bot3nu2018@gmail.com','nunu_kap2018')
+ki9 = LINE('nu11bot2018@gmail.com','nunu_kap2018')
+ki10 = LINE('nu9bot2018@gmail.com','nunu_kap2018')
+#~~~~~~~~~~~เขียนโดย༄۞ꪶꪶꪣꪫꪊุ۞࿐~~~~~~~~~~~~~~~~~~~~~~~~#
+print ("Login Succes")
 #~~~~~~~~~~~~~~~~~เขียนขึ้นโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~~~~#
-KAC = [line,ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10,ki11,ki12,ki13,ki14,ki15,ki16,ki17,ki18,ki19,ki20]
-GUE = [ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10,ki11,ki12,ki13,ki14,ki15,ki16,ki17,ki18,ki19,ki20] 
+KAC = [line,ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10]
+GUE = [ki1,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9,ki10] 
 lineMID = line.profile.mid
 ki1MID = ki1.profile.mid
 ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
 ki4MID = ki4.profile.mid
-Bots = [lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID,ki11MID,ki12MID,ki13MID,ki14MID,ki15MID,ki16MID,ki17MID,ki18MID,ki19MID,ki20MID]
+Bots = [lineMID,ki1MID,ki2MID,ki3MID,ki4MID,ki5MID,ki6MID,ki7MID,ki8MID,ki9MID,ki10MID]
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
 admin = ["u104e95aaefb53cf411f77353f6a96ece"]
@@ -86,16 +62,6 @@ ki7Profile = ki7.getProfile()
 ki8Profile = ki8.getProfile()
 ki9Profile = ki9.getProfile()
 ki10Profile = ki10.getProfile()
-ki11Profile = ki11.getProfile()
-ki12Profile = ki12.getProfile()
-ki13Profile = ki13.getProfile()
-ki14Profile = ki14.getProfile()
-ki15Profile = ki15.getProfile()
-ki16Profile = ki16.getProfile()
-ki17Profile = ki17.getProfile()
-ki18Profile = ki18.getProfile()
-ki19Profile = ki19.getProfile()
-ki20Profile = ki20.getProfile()
 #~~~~~~~~~~~~~~~~~เขียนขึ้นโดย
 lineSettings = line.getSettings()
 ki1Settings = ki1.getSettings()
@@ -108,16 +74,6 @@ ki7Settings = ki7.getSettings()
 ki8Settings = ki8.getSettings()
 ki9Settings = ki9.getSettings()
 ki10Settings = ki10.getSettings()
-ki11Settings = ki11.getSettings()
-ki12Settings = ki12.getSettings()
-ki13Settings = ki13.getSettings()
-ki14Settings = ki14.getSettings()
-ki15Settings = ki15.getSettings()
-ki16Settings = ki16.getSettings()
-ki17Settings = ki17.getSettings()
-ki18Settings = ki18.getSettings()
-ki19Settings = ki19.getSettings()
-ki20Settings = ki20.getSettings()
 #~~~~~~~~~~~~~~~~~~เขียนขึ้นโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~#
 oepoll = OEPoll(line)
 oepoll = OEPoll(ki1)
@@ -130,16 +86,6 @@ oepoll = OEPoll(ki7)
 oepoll = OEPoll(ki8)
 oepoll = OEPoll(ki9)
 oepoll = OEPoll(ki10)
-oepoll = OEPoll(ki11)
-oepoll = OEPoll(ki12)
-oepoll = OEPoll(ki13)
-oepoll = OEPoll(ki14)
-oepoll = OEPoll(ki15)
-oepoll = OEPoll(ki16)
-oepoll = OEPoll(ki17)
-oepoll = OEPoll(ki18)
-oepoll = OEPoll(ki19)
-oepoll = OEPoll(ki20)
 #~~~~~~~~~~~~~~เขียนขึ้นโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐ ~~~~~~~~~~~~~~~~~~~~~~~~~#
 responsename = line.getProfile().displayName
 responsename = ki1.getProfile().displayName
@@ -152,16 +98,6 @@ responsename = ki7.getProfile().displayName
 responsename = ki8.getProfile().displayName
 responsename = ki9.getProfile().displayName
 responsename = ki10.getProfile().displayName
-responsename = ki11.getProfile().displayName
-responsename = ki12.getProfile().displayName
-responsename = ki13.getProfile().displayName
-responsename = ki14.getProfile().displayName
-responsename = ki15.getProfile().displayName
-responsename = ki16.getProfile().displayName
-responsename = ki17.getProfile().displayName
-responsename = ki18.getProfile().displayName
-responsename = ki19.getProfile().displayName
-responsename = ki20.getProfile().displayName
 #==============================================================================#
 
 
@@ -775,39 +711,63 @@ def lineBot(op):
                     line.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                    
 #==============================================================================#
                 elif msg.text.lower() == 'cekk':
-                        gye.sendContact(to, gyeMID)
-                        ais.sendContact(to, aisMID)
+                        line.sendContact(to, lineMID)
+                        ki1.sendContact(to, ki1MID)
                         ki2.sendContact(to, ki2MID)
                         ki3.sendContact(to, ki3MID)
                         ki4.sendContact(to, ki4MID)
+                        ki5.sendContact(to, ki5MID)
+                        ki6.sendContact(to, ki6MID)
+                        ki7.sendContact(to, ki7MID)
+                        ki8.sendContact(to, ki8MID)
+                        ki9.sendContact(to, ki9MID)
+                        ki10.sendContact(to, ki10MID)			
                 elif text.lower() in ["balik"]:    
                     #gye.leaveGroup(msg.to)
-                    ais.leaveGroup(msg.to)
+                    ki1.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)
+	            ki5.leaveGroup(msg.to)
+                    ki6.leaveGroup(msg.to)
+                    ki7.leaveGroup(msg.to)
+                    ki8.leaveGroup(msg.to)	
+                    ki9.leaveGroup(msg.to)
+                    ki10.leaveGroup(msg.to)			    
                 elif text.lower() in ["aku pamit yah"]:    
-                    gye.leaveGroup(msg.to)
-                    ais.leaveGroup(msg.to)
+                    line.leaveGroup(msg.to)
+                    ki1.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
-                    ki4.leaveGroup(msg.to)      
+                    ki4.leaveGroup(msg.to) 
+	            ki5.leaveGroup(msg.to)
+                    ki6.leaveGroup(msg.to)
+                    ki7.leaveGroup(msg.to)
+                    ki8.leaveGroup(msg.to)
+                    ki9.leaveGroup(msg.to) 
+	            ki10.leaveGroup(msg.to) 	   
                 elif text.lower() in ["halo"]:    
-                    G = gye.getGroup(msg.to)
-                    ginfo = gye.getGroup(msg.to)
+                    G = line.getGroup(msg.to)
+                    ginfo = line.getGroup(msg.to)
                     G.preventedJoinByTicket = False
-                    gye.updateGroup(G)
+                    line.updateGroup(G)
                     invsend = 0
-                    Ticket = gye.reissueGroupTicket(msg.to)
-                    ais.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    Ticket = line.reissueGroupTicket(msg.to)
+                    ki1.acceptGroupInvitationByTicket(msg.to,Ticket)
                     ki2.acceptGroupInvitationByTicket(msg.to,Ticket)
                     ki3.acceptGroupInvitationByTicket(msg.to,Ticket)
                     ki4.acceptGroupInvitationByTicket(msg.to,Ticket)
-                    G = gye.getGroup(msg.to)
+                    ki5.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    ki6.acceptGroupInvitationByTicket(msg.to,Ticket)                    
+                    ki7.acceptGroupInvitationByTicket(msg.to,Ticket)
+	            ki8.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    ki9.acceptGroupInvitationByTicket(msg.to,Ticket)                    
+                    ki10.acceptGroupInvitationByTicket(msg.to,Ticket)	    
+                    G = line.getGroup(msg.to)
                     G.preventedJoinByTicket = True
-                    gye.updateGroup(G)
+                    line.updateGroup(G)
                     G.preventedJoinByTicket(G)
-                    gye.updateGroup(G)
+                    line.updateGroup(G)
 #~~~~~~~~~~~~~~~~~~~~~~~~~เขียนโดย ༄۞ꪶꪶꪣꪫꪊ۞࿐  ~~~~~~~~~~~~~~~~~~~~~~~~~~~#             
                 elif text.lower() == 'me':
                     sendMessageWithMention(to, gyeMID)
@@ -904,7 +864,7 @@ def lineBot(op):
                                 lists.append(mention["M"])
                         for ls in lists:
                             path = "http://dl.profile.gye.naver.jp/" + gye.getContact(ls).pictureStatus + "/vp"
-                            gye.sendImageWithURL(msg.to, str(path))
+                            line.sendImageWithURL(msg.to, str(path))
                 elif msg.text.lower().startswith("stealcover "):
                     if line != None:
                         if 'MENTION' in msg.contentMetadata.keys()!= None:
@@ -916,8 +876,8 @@ def lineBot(op):
                                 if mention["M"] not in lists:
                                     lists.append(mention["M"])
                             for ls in lists:
-                                path = gye.getProfileCoverURL(ls)
-                                gye.sendImageWithURL(msg.to, str(path))
+                                path = line.getProfileCoverURL(ls)
+                                line.sendImageWithURL(msg.to, str(path))
                 elif msg.text.lower().startswith("cloneprofile "):    
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
@@ -927,17 +887,17 @@ def lineBot(op):
                             contact = mention["M"]
                             break
                         try:
-                            gye.cloneContactProfile(contact)
-                            gye.sendMessage(msg.to, "Berhasil clone member tunggu beberapa saat sampai profile berubah")
+                            line.cloneContactProfile(contact)
+                            line.sendMessage(msg.to, "Berhasil clone member tunggu beberapa saat sampai profile berubah")
                         except:
-                            gye.sendMessage(msg.to, "Gagal clone member")
+                            line.sendMessage(msg.to, "Gagal clone member")
                 elif text.lower() == 'restoreprofile':    
                     try:
-                        gyeProfile.displayName = str(myProfile["displayName"])
-                        gyeProfile.statusMessage = str(myProfile["statusMessage"])
-                        gyeProfile.pictureStatus = str(myProfile["pictureStatus"])
-                        gye.updateProfileAttribute(8, gyeProfile.pictureStatus)
-                        gye.updateProfile(gyeProfile)
+                        lineProfile.displayName = str(myProfile["displayName"])
+                        lineProfile.statusMessage = str(myProfile["statusMessage"])
+                        lineProfile.pictureStatus = str(myProfile["pictureStatus"])
+                        line.updateProfileAttribute(8, gyeProfile.pictureStatus)
+                        line.updateProfile(gyeProfile)
                         line.sendMessage(msg.to, "Berhasil restore profile tunggu beberapa saat sampai profile berubah")
                     except:
                         line.sendMessage(msg.to, "Gagal restore profile")
@@ -1965,43 +1925,6 @@ def lineBot(op):
                         ki8.updateGroup(G)
                         settings["blacklist"][op.param2] = True
 #-------------------------------------------------------------------------------[ki2MID ki3MID]
-                elif op.param3 in ki2MID:
-                    if op.param2 in ki3MID:
-                        G = ki3.getGroup(op.param1)
-#                        ginfo = ki3.getGroup(op.param1)
-                        G.preventedJoinByTicket = False
-                        ki3.updateGroup(G)
-                        invsend = 0
-                        Ticket = ki3.reissueGroupTicket(op.param1)
-                        gye.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ais.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki2.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki3.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki4.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        G = ki3.getGroup(op.param1)
-                        G.preventedJoinByTicket = True
-                        ki3.updateGroup(G)
-                        G.preventedJoinByTicket(G)
-                        ki3.updateGroup(G)
-                    else:
-                        G = ki3.getGroup(op.param1)
-#                        ginfo = ki3.getGroup(op.param1)
-                        ki3.kickoutFromGroup(op.param1,[op.param2])
-                        G.preventedJoinByTicket = False
-                        ki3.updateGroup(G)
-                        invsend = 0
-                        Ticket = ki3.reissueGroupTicket(op.param1)
-                        gye.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ais.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki2.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki3.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki4.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        G = ki3.getGroup(op.param1)
-                        G.preventedJoinByTicket = True
-                        ki3.updateGroup(G)
-                        G.preventedJoinByTicket(G)
-                        ki3.updateGroup(G)
-                        settings["blacklist"][op.param2] = True
 #-------------------------------------------------------------------------------[ki2MID ki4MID]
 
                 elif op.param3 in ki10MID:
