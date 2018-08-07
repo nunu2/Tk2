@@ -1428,7 +1428,7 @@ def lineBot(op):
                         settings["blacklist"][op.param2] = True
 
 #-------------------------------------------------------------------------------[gyeMID - ki3MID]
-               elif op.param3 in ki2MID:
+                elif op.param3 in ki2MID:
                     if op.param2 in ki1MID:
                         G = ki1.getGroup(op.param1)
                         G.preventedJoinByTicket = False
