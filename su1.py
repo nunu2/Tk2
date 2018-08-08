@@ -16,7 +16,7 @@ from googletrans import Translator
 #==============================================================================================================
 botStart = time.time()
 #==============================================================================================================
-client = LINE('jonajaha1@gmail.com','jo190437')
+client = LINE('su21nu2018@gmail.com','sunu2018susu')
 #==============================================================================================================
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
@@ -33,9 +33,9 @@ clientSettings = client.getSettings()
 #==============================================================================================================
 clientPoll = OEPoll(client)
 #==============================================================================================================
-admin = "ud4d05899e434f17e9ced1676fdb4c8ed" 
-owner = "ud4d05899e434f17e9ced1676fdb4c8ed" 
-Bots=[mid,"ud4d05899e434f17e9ced1676fdb4c8ed" 
+admin = " u033cbbb55ea8f73e6aa18e4f23be65bc" 
+owner = "u033cbbb55ea8f73e6aa18e4f23be65bc" 
+Bots=[mid,"u033cbbb55ea8f73e6aa18e4f23be65bc"]
 #==============================================================================================================
 #==============================================================================================================
 contact = client.getProfile()
@@ -43,7 +43,7 @@ backup = client.getProfile()
 backup.displayName = contact.displayName
 backup.statusMessage = contact.statusMessage
 backup.pictureStatus = contact.pictureStatus
-squareChatMid='ud4d05899e434f17e9ced1676fdb4c8ed'
+squareChatMid='u033cbbb55ea8f73e6aa18e4f23be65bc'
 #helpMute = """Switched to normal mode"""
 #helpUnmute = """I'll be here when you need me"""
 #==============================================================================================================
@@ -82,7 +82,7 @@ settings = json.load(settingsOpen)
 images = json.load(imagesOpen)
 stickers = json.load(stickersOpen)
 msg_dict = {}
-bl = ["ud4d05899e434f17e9ced1676fdb4c8ed"]
+bl = ['u033cbbb55ea8f73e6aa18e4f23be65bc']
 
 try:
     with open("Log_data.json","r",encoding="utf_8_sig") as f:
