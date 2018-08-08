@@ -951,35 +951,9 @@ def helpkicker():
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"เปิดข้อความแจ้งเตือนเมื่อมีคนลบสมาชิกในกลุ่มแล้ว...")
 
-#==============================================================================#   
-                elif "ส่งเสียงกลุ่ม " in msg.text:
-                    bctxt = msg.text.replace(".ส่งเสียงกลุ่ม ", "")
-                    bc = ("เชล...บอท..น้องสุ..บาย")
-                    cb = (bctxt + bc)
-                    tts = gTTS(cb, lang='th', slow=False)
-                    tts.save('tts.mp3')
-                    n = line.getGroupIdsJoined()
-                    for manusia in n:
-                        line.sendAudio(manusia, 'tts.mp3')
 
-                elif "ส่งเสียงแชท " in msg.text:
-                    bctxt = msg.text.replace(".ส่งเสียงแชท ", "")
-                    bc = ("เชลบอทน้องสุ..บาย")
-                    cb = (bctxt + bc)
-                    tts = gTTS(cb, lang='th', slow=False)
-                    tts.save('tts.mp3')
-                    n = line.getAllContactIdsJoined()
-                    for manusia in n:
-                        line.sendAudio(manusia, 'tts.mp3')   
-	
-                elif msg.text in ["ทักเจ็บ เปิด"]:
-                    settings["kickMention"] = True
-                    line.sendMessage(msg.to,"เปิดระบบเตะคนแท็ก")
-                
-                elif msg.text in ["ทักเจ็บ ปิด"]:
-                    settings["kickMention"] = False
-                    line.sendMessage(msg.to,"ปิดระบบเตะคนแท็ก")
                     
+                
                     
                 elif 'ข้อความแอด: ' in msg.text:
                   if msg._from in admin:
@@ -1008,65 +982,6 @@ def helpkicker():
                      else:
                           settings["kick"] = spl
                           line.sendMessage(msg.to, "ตั้งค่าข้อความเมื่อมีคนลบสมาชิกแล้ว\nดังนี้👇\n\n👉{}".format(str(spl)))
-
-                	
-                elif msg.text in ["ดึง"]:
-                        settings["winvite"] = True
-                        line.sendMessage(msg.to,"send a contact to invite user")                            
-                elif msg.text.lower() == "ยกเชิน":
-                    if msg.toType == 2:
-                        group = line.getGroup(msg.to)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for i in gMembMids:
-                            line.cancelGroupInvitation(msg.to,[i])
-                elif msg.text.lower() == "บอทยก":
-                    if msg.toType == 2:
-                        group = line.getGroup(msg.to)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for i in gMembMids:
-                            random.choice(Exc).cancelGroupInvitation(msg.to,[i])
-#=============COMMAND KICKER===========================#
-                
-#====================================================
-                elif text.lower() == 'ล่องหน':
-                    gs = line.getGroup(to)
-                    targets = []
-                    for g in gs.members:
-                        if g.displayName in "":
-                            targets.append(g.mid)
-                    if targets == []:
-                        line.sendMessage(to, "แน๊ะไม่มีคนใส่ร่องหนในกลุ่มนี้")
-                    else:
-                        mc = ""
-                        for target in targets:
-                            mc += sendMessageWithMention(to,target) + "\n"
-                        line.sendMessage(to, mc)
-                elif text.lower() == 'zm':
-                    gs = line.getGroup(to)
-                    lists = []
-                    for g in gs.members:
-                        if g.displayName in "":
-                            lists.append(g.mid)
-                    if lists == []:
-                        line.sendMessage(to, "ไม่มีmidคนใส่ร่องหน")
-                    else:
-                        mc = ""
-                        for mi_d in lists:
-                            mc += "->" + mi_d + "\n"
-                        line.sendMessage(to,mc)                   
-                elif text.lower() == 'zc':
-                    gs = line.getGroup(to)
-                    lists = []
-                    for g in gs.members:
-                        if g.displayName in "":
-                            lists.append(g.mid)
-                    if lists == []:
-                        line.sendMessage(to, "แน๊ะไม่มีคนใส่ร่องหนในกลุ่มนี้")
-                    else:
-                        for ls in lists:
-                            contact = line.getContact(ls)
-                            mi_d = contact.mid
-                            line.sendContact(to, mi_d)
 #===========≠==========================================#
                 elif "จัด " in msg.text:
                         vkick0 = msg.text.replace("จัด ","")
