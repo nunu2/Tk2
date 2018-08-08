@@ -12,27 +12,6 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-#line = LINE()
-#line = LINE("เมล","พาส")
-line = LINE()
-line.log("Auth Token : " + str(line.authToken))
-line.log("Timeline Token : " + str(line.tl.channelAccessToken))
-
-ki = LINE('')
-ki.log("Auth Token : " + str(ki.authToken))
-ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
-
-kk = LINE('')
-kk.log("Auth Token : " + str(kk.authToken))
-kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
-
-kc = LINE('')
-kc.log("Auth Token : " + str(kc.authToken))
-kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
-
-ke = LINE('')
-ke.log("Auth Token : " + str(ke.authToken))
-ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 
 print ("Login Succes")
@@ -119,9 +98,9 @@ settings = {
     "cNames":"",
     "changeGroupPicture":False,
     "changePictureProfile":False,
-    "welcome":"🙏สวีสดีครับคนมาใหม่🙏",
-    "kick":"😱อุ๊ต๊ะ😱",
-    "bye":"🙌บาย..",
+    "welcome":"ยังไม่มีคำต้อนรับ" 
+    "kick":"ยังไม่มีคำทักทายเวลาเตะ",
+    "bye":"ยังไม่มีข้อความออก",
     "Respontag":"😳",
     "eror":"คุณใช้คำสั่งผิด กรุณาศึกษาวิธีใช้ หรือสอบถามกับผู้สร้าง โดยพิมคำสั่ง *.ผส*เพื่อแสดง คท ของผู้สร้าง",
     "spam":{},
@@ -130,8 +109,8 @@ settings = {
     "pnharfbot": {},
     "pname": {},
     "pro_name": {},
-    "message1":"🕸✟ℓຫຼี้छゆຸ۞🕸 \n🐭🐭🐭🐭🐭🐭🐭🐭🐭🐭🐭🐭🐭🐭\nselfbotฟรี\nติดต่อขอลงทะเบียนที่\n@ไลน์ http://line.me/ti/p/t39FP9K59s \nselfbot by:\n╔══════════════┓\n╠™NUNU_KAP \n╚══════════════┛",
-    "message":"บัญชีนี้ถูกป้องกันโดย Selfbot By ™🕸✟ℓຫຼี้छゆຸ۞🕸 ระบบได้ทำการบล็อคคุณอัตโนมัติเนื่องจากคุณยังไม่ได้ยืนยันตัวตนกับผู้สร้างบอท\nสามารถยืนตัวตนได้ง่ายโดยการพิม unblockกับ™NUNU_KAPระบบจะทำการปลดบล็อคท่านโดยอัตโนมัต",
+    "message1":"ยังไม่มีโฆษณา",
+    "message":"คุณไม่สามารถเพิ่มเพื่อนได้/nเนื่องจากคุณไม่ได้รับอนุญาติจาก ─•۞✟ℓℓஆՁՃิ۞•─ /nขอบคุณที่แอดมา (◡‿◡✿)\n •*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•\n::: (\_(\ …*…*…*…*…*…*…*…*…::::::::::::::\n*: (=’ :’) :: ออโต้บล็อค  นะจ๊ะ! :::::::::::::::::::::\n•.. (,(”)(”)¤…*…*…*…*…*…*…*…*…:::::::::::\n¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸",
 
     "userAgent": [
         "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
@@ -223,7 +202,7 @@ backup.pictureStatus = contact.pictureStatus
 
 mulai = time.time() 
 dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","Kick","!kickall","nuke","บิน","Kick","กระเด็น","หวด","เซลกากจัง","เตะ",".","ปลิว"]
-fukgerMessage = [".ควย",".หี",".แตด",".เย็ดแม่","เย็ดเข้","ค.วย",".สัส",".เหี้ย",".ไอ้เหี้ย","พ่อมึงตาย","ไอ้เลว","ระยำ","ชาติหมา","หน้าหี","เซลกาก","ไอ้นุ","ไอ้เหี้ยนุ","ไอ่นุ","พ่องตาย","ส้นตีน","แม่มึงอ่ะ","แม่มึงดิ","พ่อมึงดิ"]
+fukgerMessage = [".ควย",".หี",".แตด",".เย็ดแม่","เย็ดเข้","ค.วย",".สัส",".เหี้ย",".ไอ้เหี้ย","พ่อมึงตาย","ไอ้เลว","ระยำ","ชาติหมา","หน้าหี","เซลกาก","อิชิ","อีเหี้ยชิ","อีชิ","พ่องตาย","ส้นตีน","แม่มึงอ่ะ","แม่มึงดิ","พ่อมึงดิ"]
 
 myProfile["displayName"] = lineProfile.displayName
 myProfile["statusMessage"] = lineProfile.statusMessage
