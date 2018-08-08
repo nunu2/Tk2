@@ -16,7 +16,7 @@ from googletrans import Translator
 #==============================================================================================================
 botStart = time.time()
 #==============================================================================================================
-client
+client = LINE()
 #==============================================================================================================
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
@@ -33,9 +33,9 @@ clientSettings = client.getSettings()
 #==============================================================================================================
 clientPoll = OEPoll(client)
 #==============================================================================================================
-admin = "ude3230559bf63a55b9c28aa20ea194e3"
-owner = "ude3230559bf63a55b9c28aa20ea194e3"
-Bots=[mid,"ude3230559bf63a55b9c28aa20ea194e3"]
+admin = "ud4d05899e434f17e9ced1676fdb4c8ed" 
+owner = "ud4d05899e434f17e9ced1676fdb4c8ed" 
+Bots=[mid,"ud4d05899e434f17e9ced1676fdb4c8ed" 
 #==============================================================================================================
 #==============================================================================================================
 contact = client.getProfile()
@@ -43,7 +43,7 @@ backup = client.getProfile()
 backup.displayName = contact.displayName
 backup.statusMessage = contact.statusMessage
 backup.pictureStatus = contact.pictureStatus
-squareChatMid='mdbd283c4f8e1840fbcecf1e0e0fd9288'
+squareChatMid='ud4d05899e434f17e9ced1676fdb4c8ed'
 #helpMute = """Switched to normal mode"""
 #helpUnmute = """I'll be here when you need me"""
 #==============================================================================================================
@@ -82,7 +82,7 @@ settings = json.load(settingsOpen)
 images = json.load(imagesOpen)
 stickers = json.load(stickersOpen)
 msg_dict = {}
-bl = ["ue4341206714a63166f6540501005a5d9"]
+bl = ["ud4d05899e434f17e9ced1676fdb4c8ed"]
 
 try:
     with open("Log_data.json","r",encoding="utf_8_sig") as f:
@@ -2689,7 +2689,7 @@ def lineBot(op):
                                 client.acquireGroupCallRoute(to)
                                 client.inviteIntoGroupCall(to, contactIds=members)
                             else:
-                                client.sendMessage(to, "ก็คนทันเหงาอะ".format(str(jml)))
+                                client.sendMessage(to, "ก็คนมันเหงาอะ".format(str(jml)))
                         elif cmd.startswith("ว่า "):
                             sep = text.split(" ")
                             text = text.replace(sep[0] + " ","")
@@ -3310,17 +3310,17 @@ def lineBot(op):
                                 group = client.getGroup(to)
                                 contact = [mem.mid for mem in group.members]
                                 ct1, ct2, ct3, ct4, ct5, jml = [], [], [], [], [], len(contact)
-                                if jml <= 100:
+                                if jml <= 20:
                                     mentionMembers(to, contact)
-                                elif jml > 100 and jml <= 200:
-                                    for a in range(0, 99):
+                                elif jml > 20 and jml <= 200:
+                                    for a in range(0, 20):
                                         ct1 += [contact[a]]
                                     for b in range(100, jml):
                                         ct2 += [contact[b]]
                                     mentionMembers(to, ct1)
                                     mentionMembers(to, ct2)
                                 elif jml > 200 and jml <= 300:
-                                    for a in range(0, 99):
+                                    for a in range(0, 20):
                                         ct1 += [contact[a]]
                                     for b in range(100, 199):
                                         ct2 += [contact[b]]
@@ -3330,7 +3330,7 @@ def lineBot(op):
                                     mentionMembers(to, ct2)
                                     mentionMembers(to, ct3)
                                 elif jml > 300 and jml <= 400:
-                                    for a in range(0, 99):
+                                    for a in range(0, 20):
                                         ct1 += [contact[a]]
                                     for b in range(100, 199):
                                         ct2 += [contact[b]]
@@ -3343,7 +3343,7 @@ def lineBot(op):
                                     mentionMembers(to, ct3)
                                     mentionMembers(to, ct4)
                                 elif jml > 400 and jml <= 500:
-                                    for a in range(0, 99):
+                                    for a in range(0, 20):
                                         ct1 += [contact[a]]
                                     for b in range(100, 199):
                                         ct2 += [contact[b]]
@@ -3423,7 +3423,7 @@ def lineBot(op):
                             except:
                                 client.sendMessage(to,"กำลังตั้ง\nตั้งสติ๊กเกอรคนแอบเรียบร้อย")
 #==============================================================================================================
-                        elif "เลืยนแบบ " in msg.text.lower():
+                        elif "เลียนแบบ " in msg.text.lower():
                             mic = msg.text.lower().replace("เลืยนแบบ ","")
                             if mic == "เปิด":
                                 if settings["mimic"]["status"] == False:
