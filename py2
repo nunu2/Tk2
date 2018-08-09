@@ -338,7 +338,7 @@ def sendMessageWithMention(to, lineMID):
 "〚แบน〛〚คำสั่งแบน〛"
 "〚แบนทั้งหมด〛〚สั่งแบนทุกคนในห้อง〛"
 "〚ล้างแบน〛〚ปลอดแบน〛"
-"〚〛〚〛"
+"〚ล้างแบน @〛〚 ปลอดแบนโดยแอดชื่อ〛"
 "〚〛〚〛"
 "〚〛〚〛"
 "〚〛〚〛"
@@ -1080,7 +1080,7 @@ def helpkicker():
                     settings["dblacklist"] = True
                     line.sendMessage(msg.to,"send contact to ban")    
 
-                elif msg.text.lower().startswith("urban "):
+                elif msg.text.lower().startswith("ล้างแบน "):
                     sep = msg.text.split(" ")
                     judul = msg.text.replace(sep[0] + " ","")
                     url = "http://api.urbandictionary.com/v0/define?term="+str(judul)
