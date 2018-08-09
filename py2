@@ -371,14 +371,14 @@ def command(text):
     
 def helpset():
     helpSet = "╭════[─•۞✟ℓℓஆՁゆຸ۞•─] " + "\n" + \
-    "║แชร์เปิด/ปิด]" + "\n" + \
-    "║สแปม]" + "\n" + \
-    "║อัฟวีดีโอ]" + "\n" + \
-    "║คิกวีดีโอ]" + "\n" + \
-    "║วีดีโอคิก1-10]" + "\n" + \
-    "║ว่างเปล่า]" + "\n" + \
-    "║ว่างเปล่า" + "\n" + \
-    "║ว่างเปล่า" + "\n" + \
+    "〚เปิดแทค〛〚〛"
+    "〚ปิดแทค〛〚〛"
+    "〚เปิดแทคแชท〛〚〛"
+    "〚ปิดแทคแชท〛〚〛"
+    "〚ตั้งแทคแชท: 〛〚〛"
+    "〚setrespongroup: 〛〚〛"
+    "〚〛〚〛"
+    "〚〛〚〛"
     "╰════"
     return helpSet 
 
@@ -808,7 +808,164 @@ def lineBot(op):
                         ki1.sendMessage(to, text=txt, contentMetadata={'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
                         ki1.sendMessage(to, "จำนวน {} คน".format(str(len(nama))))          
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~༄۞ꪶꪶꪣꪫꪊุ۞࿐~~~~~~~~~~~~~~~~~~~~~~~~~#
-
+                elif msg.text.lower() == "เปิดแทค":
+                    settings["detectMention"] = True
+                    line.sendMessage(msg.to,"เปิดแทคเรีบร้อยครับ")
+                elif msg.text.lower() == "ปิดแทค":
+                    settings["detectMention"] = False
+                    line.sendMessage(msg.to,"ปิดแทคเรีบร้อยครับ")
+                elif msg.text.lower() == "เปิดแทคแชท":
+                    settings["detectMentionPM"] = True
+                    line.sendMessage(msg.to,"เปิดแทคแชทเรียบร้อยครับ")
+                elif msg.text.lower() == "ปิดแทคแชท":
+                    settings["detectMentionPM"] = False
+                    line.sendMessage(msg.to,"ปิดแทคแชทเรียบร้อยครับ")
+                elif msg.text.lower().startswith("ตั้งแทคแชท: "):
+                    text = msg.text.lower().replace("ตั้งแทคแชท: ","")
+                    settings["pmMessage"] = text
+                    line.sendMessage(msg.to, "คำแทคแชท สต คือ : {}".format(str(settings["pmMessage"])))
+                elif msg.text.lower().startswith("setrespongroup: "):
+                    text = msg.text.lower().replace("setrespongroup: ","")
+                    settings["respMessage"] = text
+                    line.sendMessage(msg.to, "Success Update Response Group to : {}".format(str(settings["respMessage"])))
+#===============================================================
+#==============================================================================================================
+        if op.type == 26:
+ #            if settings ["mutebot2"] == True:
+            msg = op.message
+            text = msg.text
+            msg_id = msg.id
+            receiver = msg.to
+            sender = msg._from
+            if msg.toType == 0 or msg.toType == 2:
+                if msg.toType == 0:
+                    to = sender
+                elif msg.toType == 2:
+                    to = receiver
+                if settings["autoRead"] == True:
+                    line.sendChatChecked(to, msg_id)
+                if msg.contentType == 0:
+                    if settings["unsendMessage"] == True:
+                        try:
+                            if msg.location != None:
+                                unsendmsg = time.time()
+                                msg_dict[msg.id] = {"lokasi":msg.location,"from":msg._from,"waktu":unsendmsg}
+                            else:
+                                unsendmsg = time.time()
+                                msg_dict[msg.id] = {"text":msg.text,"from":msg._from,"waktu":unsendmsg}
+                        except Exception as e:
+                            print (e)
+                if msg.contentType == 1:
+                    if settings["unsendMessage"] == True:
+                        try:
+                            unsendmsg1 = time.time()
+                            path = line.downloadObjectMsg(msg_id)
+                            msg_dict[msg.id] = {"from":msg._from,"image":path,"waktu":unsendmsg1}
+                        except Exception as e:
+                            print (e)
+                if msg.contentType == 2:
+                    if settings["unsendMessage"] == True:
+                        try:
+                            unsendmsg2 = time.time()
+                            path = line.downloadObjectMsg(msg_id)
+                            msg_dict[msg.id] = {"from":msg._from,"video":path,"waktu":unsendmsg2}
+                        except Exception as e:
+                            print (e)
+                if msg.contentType == 3:
+                    if settings["unsendMessage"] == True:
+                        try:
+                            unsendmsg3 = time.time()
+                            path = line.downloadObjectMsg(msg_id)
+                            msg_dict[msg.id] = {"from":msg._from,"audio":path,"waktu":unsendmsg3}
+                        except Exception as e:
+                            print (e)
+                if msg.contentType == 7:
+                    if settings["unsendMessage"] == True:
+                        try:
+                            unsendmsg7 = time.time()
+                            sticker = msg.contentMetadata["STKID"]
+                            link = "http://dl.stickershop.line.naver.jp/stickershop/v1/sticker/{}/android/sticker.png".format(sticker)
+                            msg_dict[msg.id] = {"from":msg._from,"sticker":link,"waktu":unsendmsg7}
+                        except Exception as e:
+                            print (e)
+                if msg.contentType == 13:
+                    if settings["unsendMessage"] == True:
+                        try:
+                            unsendmsg13 = time.time()
+                            mid = msg.contentMetadata["mid"]
+                            msg_dict[msg.id] = {"from":msg._from,"mid":mid,"waktu":unsendmsg13}
+                        except Exception as e:
+                            print (e)
+                if msg.contentType == 14:
+                    if settings["unsendMessage"] == True:
+                        try:
+                            unsendmsg14 = time.time()
+                            path = line.downloadObjectMsg(msg_id)
+                            msg_dict[msg.id] = {"from":msg._from,"file":path,"waktu":unsendmsg14}
+                        except Exception as e:
+                            print (e)
+#==============================================================================================================
+                if msg.toType == 0 and settings["autoReply"] and sender != lineMID:
+                    contact = line.getContact(sender)
+                    rjct = ["auto", "ngetag"]
+                    validating = [a for a in rjct if a.lower() in text.lower()]
+                    if validating != []: return
+                    if contact.attributes != 32:
+                        msgSticker = settings["messageSticker"]["listSticker"]["sleepSticker"]
+                        if msgSticker != None:
+                            sid = msgSticker["STKID"]
+                            spkg = msgSticker["STKPKGID"]
+                            sver = msgSticker["STKVER"]
+                            sendSticker(to, sver, spkg, sid)
+                        if "@!" in settings["replyPesan"]:
+                            msg_ = settings["replyPesan"].split("@!")
+                            sendMention(to, sender, "Sleep Mode :\n" + msg_[0], msg_[1])
+                        sendMention(to, sender, "Sleep Mode :\nจ๊ะเอ๋", settings["replyPesan"])
+                if 'MENTION' in msg.contentMetadata.keys()!= None:
+                    if settings["detectMentionPM"] == True:
+                        names = re.findall(r'@(\w+)', text)
+                        mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                        mentionees = mention['MENTIONEES']
+                        for mention in mentionees:
+                            if lineMID in mention["M"]:
+                                sendMention(sender, sender, "「ตอบแทคอัตโนมัติ」\n", "\n" + str(settings["pmMessage"]))
+                                break
+                if msg.contentType == 0: 
+                    if 'MENTION' in msg.contentMetadata.keys()!= None:
+                        names = re.findall(r'@(\w+)', text)
+                        mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                        mentionees = mention['MENTIONEES']
+                        lists = []
+                        gInfo = line.getGroup(receiver)
+                        members = gInfo.members
+                        if len(members) == len(mentionees): return
+                        elif "list user" in text.lower(): return
+                        elif len(mentionees) >= 50: return
+                        for mention in mentionees:
+                            if lineMID in mention["M"]:
+                                rjct = ["auto", "ngetag"]
+                                if settings["detectMention"] == True:
+                                    msgSticker = settings["messageSticker"]["listSticker"]["responSticker"]
+                                    if msgSticker != None:
+                                        sid = msgSticker["STKID"]
+                                        spkg = msgSticker["STKPKGID"]
+                                        sver = msgSticker["STKVER"]
+                                        sendSticker(to, sver, spkg, sid)
+                                    if "@!" in settings["mentionPesan"]:
+                                        msg_ = settings["mentionPesan"].split("@!")
+                                        return sendMention(to, sender, "ข้อความอัตโนมัติ\n" + msg_[0], msg_[1])
+                                    sendMention(receiver, sender, "😎" ,"\n{}".format(str(settings['mentionPesan'])))
+                                break
+                if 'MENTION' in msg.contentMetadata.keys() != None:
+                    if settings["notag"] == True:
+                        name = re.findall(r'@(\w+)', msg.text)
+                        mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                        mentionees = mention['MENTIONEES']
+                        for mention in mentionees:
+                            if lineMID in mention["M"]:
+                               line.sendMessage(msg.to, "บอกแล้วอย่าแทคเยอะจุกเลย5555")
+                               line.kickoutFromGroup(msg.to, [msg._from])
+                               break
 #============================ระบบรัน====เขียนโดย◇─•۞✟ℓℓஆՁゆຸ۞•─==============================================#
                 elif "รันแชท @" in msg.text:
                     _name = msg.text.replace(".รันแชท @","")
