@@ -60,7 +60,7 @@ read = {
     "readMember":{},
     "readTime":{},
     "ROM":{},
-}
+
 sider = {
   "point":{},
   "cyduk":{},
