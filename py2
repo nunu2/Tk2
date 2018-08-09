@@ -416,8 +416,315 @@ def helpkicker():
     return helpKicker
  
 #==============================================================================#
+#==============================================================================================================
+def lineBot(op):
+    try:
+        if op.type == 0:
+            return
+#==============================================================================================================
+#=============================================[OP TYPE 5 AUTO ADD]=============================================
+#==============================================================================================================
+        if op.type == 5:
+            print ("[ 5 ] NOTIFIED ADD CONTACT")
+            if settings["autoAdd"] == True:
+                line.findAndAddContactsByMid(op.param1)
+            if settings["autoBlock"] == True:
+                line.blockContact(op.param1) 
+            msgSticker = settings["messageSticker"]["listSticker"]["addSticker"]
+            if msgSticker != None:
+                sid = msgSticker["STKID"]
+                spkg = msgSticker["STKPKGID"]
+                sver = msgSticker["STKVER"]
+                sendSticker(op.param1, sver, spkg, sid)
+            if "@!" in settings["addPesan"]:
+                msg = settings["addPesan"].split("@!")
+                return sendMention(op.param1, op.param1, msg[0], msg[1])
+            sendMention(op.param1, op.param1, "Halo", ", {}".format(str(settings['addPesan'])))
+            arg = "   New Friend : {}".format(str(client.getContact(op.param1).displayName))
+            print (arg)
 
-                                
+        if op.type == 13:
+            print ("[ 13 ] NOTIFIED INVITE INTO GROUP")
+            group = line.getGroup(op.param1)
+            contact = line.getContact(op.param2)
+            if settings["autoJoin"] and linetMID in op.param3:
+                line.acceptGroupInvitation(op.param1)
+                sendMention(op.param1, op.param2, "Hello", ", thanks for invite me")
+                
+                       
+        if op.type == 13:
+            print(op.param1)
+            print(op.param2)
+            print(op.param3)
+            if mid in op.param3:
+                G = line.getGroup(op.param1)
+                if setting["autoJoin"] == True:
+                    if setting["autoCancel"]["on"] == True:
+                        if len(G.members) <= setting["autoCancel"]["members"]:
+                            line.rejectGroupInvitation(op.param1)
+                        else:
+                            line.acceptGroupInvitation(op.param1)
+                    else:
+                        line.acceptGroupInvitation(op.param1)
+                elif setting["autoCancel"]["on"] == True:
+                    if len(G.members) <= setting["autoCancel"]["members"]:
+                        line.rejectGroupInvitation(op.param1)
+            else:
+                Inviter = op.param3.replace("",',')
+                InviterX = Inviter.split(",")
+                matched_list = []
+                for tag in setting["blacklist"]:
+                    matched_list+=filter(lambda str: str == tag, InviterX)
+                if matched_list == []:
+                    pass
+                else:
+                    line.cancelGroupInvitation(op.param1, matched_list)
+ #==============================================================================================================
+        if op.type == 15:
+            print ("[ 15 ]  NOTIFIED LEAVE GROUP")
+            if settings["leaveMessage"] == True:
+                if "{gname}" in settings['leavePesan']:
+                    gName = line.getGroup(op.param1).name
+                    msg = settings['leavePesan'].replace("{gname}", gName)
+                    msgSticker = settings["messageSticker"]["listSticker"]["leaveSticker"]
+                    if msgSticker != None:
+                        sid = msgSticker["STKID"]
+                        spkg = msgSticker["STKPKGID"]
+                        sver = msgSticker["STKVER"]
+                        sendSticker(op.param2, sver, spkg, sid)
+                    if "@!" in settings['leavePesan']:
+                        msg = msg.split("@!")
+                        return sendMention(op.param2, op.param2, msg[0], msg[1])
+                    return sendMention(op.param2, op.param2, "Hallo ", msg)
+                msgSticker = settings["messageSticker"]["listSticker"]["leaveSticker"]
+                if msgSticker != None:
+                    sid = msgSticker["STKID"]
+                    spkg = msgSticker["STKPKGID"]
+                    sver = msgSticker["STKVER"]
+                    sendSticker(op.param1, sver, spkg, sid)
+                sendMention(op.param1, op.param2, "Bye", "\n{}".format(str(settings['leavePesan'])))
+
+        if op.type == 17:
+            print ("[ 17 ]  NOTIFIED ACCEPT GROUP INVITATION")
+            if settings["welcomeMessage"] == True:
+                group = line.getGroup(op.param1)
+                contact = line.getContact(op.param2)
+                msgSticker = settings["messageSticker"]["listSticker"]["welcomeSticker"]
+                if msgSticker != None:
+                    sid = msgSticker["STKID"]
+                    spkg = msgSticker["STKPKGID"]
+                    sver = msgSticker["STKVER"]
+                    sendSticker(op.param1, sver, spkg, sid)
+                if "{gname}" in settings['welcomePesan'].lower():
+                    gName = group.name
+                    msg = settings['welcomePesan'].replace("{gname}", gName)
+                    if "@!" in msg:
+                        msg = msg.split("@!")
+                        return sendMention(op.param1, op.param2, msg[0], msg[1])
+                    sendMention(op.param1, op.param2, "Hi", msg)
+                else:
+                    sendMention(op.param1, op.param2, "Hi","\n{}".format(str(settings['welcomePesan'])))
+                    contact = line.getContact(op.param2)
+                    line.sendImageWithURL(op.param1,image)
+                    arg = "   Group Name : {}".format(str(group.name))
+                    arg += "\n   User Join : {}".format(str(contact.displayName))
+                    print (arg)
+#====================================================================================================       
+#==============================================================================================================
+        if op.type == 22:
+            print ("[ 22 ] NOTIFIED INVITE INTO ROOM")
+            if settings["autoLeave"] == True:
+                line.sendMessage(op.param1, "ngapain invite gw -,-")
+                line.leaveRoom(op.param1)
+
+        if op.type == 24:
+            print ("[ 24 ] NOTIFIED LEAVE ROOM")
+            if settings["autoLeave"] == True:
+                line.sendMessage(op.param1, "Goblok ngapain invite gw")
+                line.leaveRoom(op.param1)
+        if op.type in [25,26]:
+            print ("[ 25 ] SEND MESSAGE")
+            msg = op.message
+            text = msg.text
+            msg_id = msg.id
+            receiver = msg.to
+            sender = msg._from
+            if msg.toType == 0 or msg.toType == 2:
+                if msg.toType == 0:
+                    to = receiver
+                elif msg.toType == 2:
+                    to = receiver
+                if msg.contentType == 0:
+                    if text is None:
+                        return
+                    else:
+                        cmd = command(text)
+                        if msg.text:
+                            if msg.text.lower().lstrip().rstrip() in wbanlist:
+                                if msg.text not in lineMID:
+                                    try:
+                                        line.kickoutFromGroup(msg.to,[sender])
+                                    except Exception as e:
+                                        print(e)
+                        if receiver in temp_flood:
+                            if temp_flood[receiver]["expire"] == True:
+                               if cmd == "open":
+                                    temp_flood[receiver]["expire"] = False
+                                    temp_flood[receiver]["time"] = time.time()
+                                    line.sendMessage(to,"Bot Actived")
+                               return
+                            elif time.time() - temp_flood[receiver]["time"] <= 5:
+                                temp_flood[receiver]["flood"] += 1
+                                if temp_flood[receiver]["flood"] >= 20:
+                                    temp_flood[receiver]["flood"] = 0
+                                    temp_flood[receiver]["expire"] = True
+                                    ret_ = "I will be off for 30 seconds, type open to re-enable"
+                                    userid = "https://line.me/ti/p/~" + line.profile.userid
+                                    line.sendFooter(to, "Flood Detect !\n"+str(ret_), str(userid), "http://dl.profile.line-cdn.net/"+line.getContact(lineMID).pictureStatus, line.getContact(lineMID).displayName)
+                            else:
+                                 temp_flood[receiver]["flood"] = 0
+                            temp_flood[receiver]["time"] = time.time()
+                        else:
+                            temp_flood[receiver] = {
+    	                        "time": time.time(),
+    	                        "flood": 0,
+    	                        "expire": False
+                            }
+
+        if op.type == 26:
+#            if settings ["mutebot2"] == True:
+            msg = op.message
+            try:
+                if msg.toType == 0:
+                    line.log("[%s]"%(msg._from)+str(msg.text))
+                else:
+                    group = line.getGroup(msg.to)
+                    contact = line.getContact(msg._from)
+                    line.log("[%s]"%(msg.to)+"\nGroupname: "+str(group.name)+"\nNamenya: "+str(contact.displayName)+"\nPesannya: "+str(msg.text))
+                if msg.contentType == 0:
+            #Save message to dict
+                    msg_dict[msg.id] = {"text":msg.text,"from":msg._from,"createdTime":msg.createdTime}
+                if msg.contentType == 7:
+                    stk_id = msg.contentMetadata['STKID']
+                    stk_ver = msg.contentMetadata['STKVER']
+                    pkg_id = msg.contentMetadata['STKPKGID']
+                    ret_ = "="
+                    ret_ += "\nSTICKER ID : {}".format(stk_id)
+                    ret_ += "\nSTICKER PACKAGES ID : {}".format(pkg_id)
+                    ret_ += "\nSTICKER VERSION : {}".format(stk_ver)
+                    ret_ += "\nSTICKER URL : line://shop/detail/{}".format(pkg_id)
+                    ret_ += "\n"
+                    msg_dict[msg.id] = {"text":str(ret_),"from":msg._from,"createdTime":msg.createdTime}
+            except Exception as e:
+                print(e)
+#==============================================================================================================
+        if op.type == 25:
+#             if settings ["mutebot2"] == True:
+            msg = op.message
+            text = msg.text
+            msg_id = msg.id
+            receiver = msg.to
+            sam = squareChatMid
+            sender = msg._from
+            if msg.toType == 0:
+                if sender != line.profile.mid:
+                    to = sender
+                else:
+                    to = receiver
+            else:
+                to = receiver
+            if msg.contentType == 0:
+                if text is None:
+                    return
+                elif msg.text.lower().startswith("ตั้งอ่าน1 "):
+                    sep = text.split(" ")
+                    say = text.replace(sep[0] + " ","")
+                    settings["anu"] = str(say).lower()
+                    line.sendMessage(msg.to, "ข้อความคนอ่าน 「 " + str(settings["anu"]) + " 」")
+                elif msg.text.lower().startswith("ตั้งอ่าน2 "):
+                    sep = text.split(" ")
+                    say = text.replace(sep[0] + " ","")
+                    settings["anu2"] = str(say).lower()
+                    line.sendMessage(msg.to, "ข้อความคนอ่าน 「 " + str(settings["anu2"]) + " 」")
+                elif msg.text.lower().startswith("say "):
+                    sep = text.split(" ")
+                    say = text.replace(sep[0] + " ","")
+                    line.sendMessage(to, (say))
+                    assist.sendMessage(to, (say))
+                    kicker.sendMessage(to, (say))
+                    kicker2.sendMessage(to, (say))
+#==============================================================================================================
+                elif text.lower() == "คำสั่ง" or text.lower() == ".":
+                    helpmessagee = helpmsg
+                    line.sendMessage(to, str(helpmessagee))
+                elif text.lower() == "self" or text.lower() == ".":
+                    helpselfbot = helpself
+                    line.sendMessage(to, str(helpselfbot))
+                elif text.lower() == "fiture" or text.lower() == ".":
+                    helpftr = helpfiture
+                    line.sendMessage(to, str(helpftr))
+                elif text.lower() == "update" or text.lower() == ".":
+                    helpup = helpupdate
+                    line.sendMessage(to, str(helpup))
+                elif text.lower() == "group" or text.lower() == ".":
+                    helpgc = helpgroup
+                    line.sendMessage(to, str(helpgc))
+                elif text.lower() == "reader" or text.lower() == ".":
+                    helprd = helpread
+                    line.sendMessage(to, str(helprd))
+                elif text.lower() == "author" or text.lower() == ".":
+                    helpaut = helpauthor
+                    line.sendMessage(to, str(helpaut))
+                elif text.lower() == "stealing" or text.lower() == ".":
+                    helpst = helpsteal
+                    line.sendMessage(to, str(helpst))
+                elif text.lower() == "spaming" or text.lower() == ".":
+                    helpsp = helpspam
+                    line.sendMessage(to, str(helpsp))
+                elif text.lower() == "settings" or text.lower() == ".":
+                    helpsett = helpset
+                    line.sendMessage(to, str(helpsett))
+                elif text.lower() == "banning" or text.lower() == ".":
+                    helpbn = helpban
+                    line.sendMessage(to, str(helpbn))
+                elif text.lower() == "translate" or text.lower() == ".":
+                    helptr = helptrans
+                    line.sendMessage(to, str(helptr))
+                elif text.lower() == "lyric" or text.lower() == ".":
+                    helply= helplyric
+                    line.sendMessage(to, str(helply))
+                elif text.lower() == "youtube" or text.lower() == ".":
+                    helpyt = helpytube
+                    line.sendMessage(to, str(helpyt))
+                elif text.lower() == "camera" or text.lower() == ".":
+                    helpcm = helpcam
+                    line.sendMessage(to, str(helpcm))
+                elif text.lower() == "music" or text.lower() == ".":
+                    helpmc = helpmusic
+                    line.sendMessage(to, str(helpmc))
+                elif text.lower() == "kaskus" or text.lower() == ".":
+                    helpks = helpkus
+                    line.sendMessage(to, str(helpks))
+                elif text.lower() == "soundcloud" or text.lower() == ".":
+                    helpsd = helpsound
+                    line.sendMessage(to, str(helpsd))
+                elif text.lower() == "news" or text.lower() == ".":
+                    helpnw = helpnews
+                    line.sendMessage(to, str(helpnw))
+                elif text.lower() == "province" or text.lower() == ".":
+                    helppv = helpprov
+                    line.sendMessage(to, str(helppv))
+                elif text.lower() == "brainly" or text.lower() == ".":
+                    helpbr = helpbran
+                    line.sendMessage(to, str(helpbr))
+                elif text.lower() == "lyric" or text.lower() == ".":
+                    helprik = helpry
+                    line.sendMessage(to, str(helprik))
+                elif msg.text.lower().startswith("contact "):
+                    sep = text.split(" ")
+                    say = text.replace(sep[0] + " ","")
+                    line.sendMessage(receiver, None, contentMetadata={'mid': say}, contentType=13)
+#=============================================================================
 #~~~~~~~~~~~~~~~~~~~~~~~~ระบบแทค~~~~~~~~~~~~~~~~~~~~~#
                 elif text.lower() == 'แทค':
                     group = line.getGroup(msg.to)
