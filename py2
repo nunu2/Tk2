@@ -965,7 +965,139 @@ def lineBot(op):
                             if lineMID in mention["M"]:
                                line.sendMessage(msg.to, "บอกแล้วอย่าแทคเยอะจุกเลย5555")
                                line.kickoutFromGroup(msg.to, [msg._from])
-                               break
+			       break
+#==============================================================================================================
+                if to in read["readPoint"]:
+                    if sender not in read["ROM"][to]:
+                        read["ROM"][to][sender] = True
+#==============================================================================================================
+                if msg.contentType == 0:
+                    if msg.toType == 0:
+                        if settings["responpm"] == True:
+                            sendMention(sender, sender, "จ๊ะเอ๋", "saya sedang offline, PM nanti :)")
+#==============================================================================================================
+                if msg.contentType == 13:
+                    if settings["checkContact"] == True:
+                        msg.contentType = 0
+                        line.sendMessage(msg.to,msg.contentMetadata["mid"])
+                        if 'displayName' in msg.contentMetadata:
+                            contact = line.getContact(msg.contentMetadata["mid"])
+                            try:
+                                cu = channel.getProfileCoverURL(msg.contentMetadata["mid"])
+                            except:
+                                cu = ""
+                            line.sendMessage(msg.to,"「DisplayName」:\n" + msg.contentMetadata["displayName"] + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
+                        else:
+                            contact = line.getContact(msg.contentMetadata["mid"])
+                            try:
+                                cu = channel.getProfileCoverURL(msg.contentMetadata["mid"])
+                            except:
+                                cu = ""
+                            if settings["server"] == "VPS":
+                                line.sendMessage(msg.to,"「DisplayName」:\n" + contact.displayName + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
+                                line.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/" + contact.pictureStatus)
+                                line.sendImageWithURL(msg.to,str(cu))
+#================================================
+#==============================================================================================================
+        if op.type == 25:
+#             if settings ["mutebot2"] == True:
+            msg = op.message
+            text = msg.text
+            msg_id = msg.id
+            receiver = msg.to
+            sender = msg._from
+            if msg.toType == 0 or msg.toType == 2:
+                if msg.toType == 0:
+                    to = receiver
+                elif msg.toType == 2:
+                    to = receiver
+                if msg.contentType == 0:
+                    if settings["autoRead"] == True:
+                        line.sendChatChecked(to, msg_id)
+                    if text is None:
+                        return
+                    else:
+                        cmd = command(text)
+                    if cmd != "Undefined command":
+#==============================================================================================================
+                        if cmd == "tts":
+                            texttospeech = helptexttospeech()
+                            line.sendMessage(to, str(texttospeech))
+                        elif cmd == "translate":
+                            helpTranslate = helptranslate()
+                            line.sendMessage(to, str(helpTranslate))
+                        elif cmd == "restart" or cmd == "reboot":
+                            line.sendMessage(to, "Succes logout from bots")
+                            settings["restartPoint"] = to
+                            restartBot()
+                        elif cmd == "me" or cmd == "tes":
+                            line.sendMentionFooter(to, '「ผู้ใช้」\n', sender, "https://line.me/ti/p/~gg880.", "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, client.getContact(sender).displayName);client.sendMessage(to, client.getContact(sender).displayName, contentMetadata = {'previewUrl': 'http://dl.profile.line-cdn.net/'+client.getContact(sender).pictureStatus, 'i-installUrl': 'https://line.me/ti/p/~gg880.', 'type': 'mt', 'subText': "phuselfbot", 'a-installUrl': 'https://line.me/ti/p/~gg880.', 'a-installUrl': ' https://line.me/ti/p/~gg880.', 'a-packageName': 'com.spotify.music', 'countryCode': 'ID', 'a-linkUri': 'https://line.me/ti/p/~gg880.', 'i-linkUri': 'https://line.me/ti/p/~gg880.', 'id': 'mt000000000a6b79f9', 'text': 'Khie', 'linkUri': 'https://line.me/ti/p/~gg880'}, contentType=19)
+                        elif cmd == "yabi":
+                            userid = "https://line.me/ti/p/~" + client.profile.userid
+                            line.sendImageWithFooter(to, "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, str(userid), "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, client.getContact(sender).displayName)
+                            line.sendMentionFooter(to, '「Me」\n', sender, str(userid), "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, client.getContact(sender).displayName)
+                            line.sendMusic(to, client.getContact(sender).displayName, "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, str(userid), "Khie Bot", client.getContact(sender).displayName)
+                        elif cmd == "speed":
+                            start = time.time()
+                            line.sendMessage(to, "Counting...")
+                            speed = time.time() - start
+                            ping = speed * 1000
+                            line.sendMessage(to, "The result is {} ms".format(str(speedtest(ping))))
+                        elif cmd == "newticket":
+                            line.reissueUserTicket()
+                            userid = "https://line.me/ti/p/~" + client.profile.userid
+                            line.sendFooter(to, "「New Ticket」\n"+str(userid), userid, "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, client.getContact(sender).displayName)
+                        elif cmd == "ticket":
+                            userid = "https://line.me/ti/p/~" + client.profile.userid
+                            line.sendFooter(to, "「Ticket」\n"+str(userid), userid, "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, client.getContact(sender).displayName)
+                        elif cmd == "getannounce":
+                            gett = line.getChatRoomAnnouncements(receiver)
+                            for a in gett:
+                                aa = line.getContact(a.creatorMid).displayName
+                                bb = a.contents
+                                cc = bb.link
+                                textt = bb.text
+                                line.sendMessage(to, 'Link: ' + str(cc) + '\nText: ' + str(textt) + '\nCreator: ' + str(aa))
+                        elif cmd == "ออน":
+                            timeNow = time.time()
+                            runtime = timeNow - botStart
+                            runtime = format_timespan(runtime)
+                            resetTime = timeNow - int(settings["timeRestart"])
+                            userid = "https://line.me/ti/p/~" + line.profile.userid
+                            line.sendFooter(to, "「เวลาทำงานของบอท」\n{} ".format(str(runtime)), str(userid), "http://dl.profile.line-cdn.net/"+line.getContact(sender).pictureStatus, line.getContact(sender).displayName)
+                        elif cmd == "แจก":
+                            line.sendMessage(to, text=None, contentMetadata=None, contentType=9)
+                        elif cmd == "อัพรูป":
+                            settings["changePicture"] = True
+                            sendMention(to, sender, "「 เปลี่ยนรูปสำเร็จแล้ว」\n•", "\nSend pict !")
+                        elif cmd == "อัพวีดีโอ" and sender == clientMID:
+                            settings['changeProfileVideo']['status'] = True
+                            settings['changeProfileVideo']['stage'] = 1
+                            sendMention(to, sender, "「 เปลียนวีดีโอสำเร็จแล้ว 」\n•", "\nSend video !")
+                        elif cmd == "อัพรูปกลุ่ม":
+                            if msg.toType == 2:
+                                if to not in settings["changeGroupPicture"]:
+                                    settings["changeGroupPicture"].append(to)
+                            sendMention(to, sender, "「 ส่งรูปที่จะเปลี่ยนลงมา 」\n•", "\nตั้งรูปกลุ่ม !")
+                        elif cmd.startswith("ชื่อ "):
+                            string = cmd.replace("ชื่อ", "")
+                            if len(string) <= 10000000000:
+                                pname = line.getContact(sender).displayName
+                                profile = line.getProfile()
+                                profile.displayName = string
+                                line.updateProfile(profile)
+                                userid = "https://line.me/ti/p/~" + client.profile.userid
+                                line.sendFooter(to, "Update Name\nStatus : Success\nFrom : "+str(pname)+"\nTo :"+str(string), userid, "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, client.getContact(sender).displayName)
+                        elif cmd.startswith("ตัส "):
+                            string = cmd.replace("ตัส", "")
+                            if len(string) <= 10000000000:
+                                pname = line.getContact(sender).statusMessage
+                                profile = line.getProfile()
+                                profile.statusMessage = string
+                                line.updateProfile(profile)
+                                userid = "https://line.me/ti/p/~" + client.profile.userid
+                                line.sendFooter(to, "Update Status\nStatus : Success\nFrom : "+str(pname)+"\nTo :"+str(string), userid, "http://dl.profile.line-cdn.net/"+client.getContact(sender).pictureStatus, client.getContact(sender).displayName)
+#=====================================================
 #============================ระบบรัน====เขียนโดย◇─•۞✟ℓℓஆՁゆຸ۞•─==============================================#
                 elif "รันแชท @" in msg.text:
                     _name = msg.text.replace(".รันแชท @","")
