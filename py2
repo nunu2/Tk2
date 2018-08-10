@@ -1102,98 +1102,98 @@ def lineBot(op):
                 elif text.lower() == 'protect on':
                         if settings["protect"] == True:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Already On")
+                                line.sendMessage(msg.to,"➲ Protection Already On")
                         else:
                             settings["protect"] = True
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Set To On")
                                 
                 elif text.lower() == 'protect off':
                         if settings["protect"] == False:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Already Off")
                         else:
                             settings["protect"] = False
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Set To Off")
 #----------------------------------------------------------------------------------------                        
                 elif text.lower() == 'qrprotect on':
                         if settings["qrprotect"] == True:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Qr Already On")
+                                line.sendMessage(msg.to,"➲ Protection Qr Already On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Qr Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Qr Set To On")
                         else:
                             settings["qrprotect"] = True
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Qr Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Qr Set To On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Qr Already On")
+                                line.sendMessage(msg.to,"➲ Protection Qr Already On")
                                 
                 elif text.lower() == 'qrprotect off':
                         if settings["qrprotect"] == False:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Qr Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Qr Already Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Qr Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Qr Set To Off")
                         else:
                             settings["qrprotect"] = False
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Qr Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Qr Set To Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Qr Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Qr Already Off")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'inviteprotect on':
                         if settings["inviteprotect"] == True:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Invite Already On")
+                                line.sendMessage(msg.to,"➲ Protection Invite Already On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Invite Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Invite Set To On")
                         else:
                             settings["inviteprotect"] = True
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Invite Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Invite Set To On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Invite Already On")
+                                line.sendMessage(msg.to,"➲ Protection Invite Already On")
                                 
                 elif text.lower() == 'inviteprotect off':
                         if settings["inviteprotect"] == False:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Invite Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Invite Already Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Invite Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Invite Set To Off")
                         else:
                             settings["inviteprotect"] = False
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Invite Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Invite Set To Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Invite Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Invite Already Off")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'cancelprotect on':
                         if settings["cancelprotect"] == True:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already On")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Already On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Set To On")
                         else:
                             settings["cancelprotect"] = True
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Set To On")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Set To On")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already On")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Already On")
                                 
                 elif text.lower() == 'cancelprotect off':
                         if settings["cancelprotect"] == False:
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Set To Off")
                         else:
                             settings["cancelprotect"] = False
                             if settings["lang"] == "JP":
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Set To Off")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Set To Off")
                             else:
-                                gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
+                                line.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
 #--------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'pro on':
