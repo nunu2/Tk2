@@ -235,60 +235,128 @@ myProfile["statusMessage"] = lineProfile.statusMessage
 myProfile["pictureStatus"] = lineProfile.pictureStatus
 #==============================================================================#
 #==============================================================================#
-def Rapid1Say(mtosay):
-    line.sendText(Rapid1To,mtosay)
+read = json.load(readOpen)
+settings = json.load(settingsOpen)
+images = json.load(imagesOpen)
+stickers = json.load(stickersOpen)
+msg_dict = {}
+bl = ['u033cbbb55ea8f73e6aa18e4f23be65bc']
 
-def summon(to, nama):
-    aa = ""
-    bb = ""
-    strt = int(14)
-    akh = int(14)
-    nm = nama
-    for mm in nm:
-      akh = akh + 2
-      aa += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(mm)+"},"""
-      strt = strt + 6
-      akh = akh + 4
-      bb += "\xe2\x95\xa0 @x \n"
-    aa = (aa[:int(len(aa)-1)])
-    msg = Message()
-    msg.to = to
-    msg.text = "\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\n"+bb+"\xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90"
-    msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
-    print ("TAG ALL")
+try:
+    with open("Log_data.json","r",encoding="utf_8_sig") as f:
+        msg_dict = json.load(f.read())
+except:
+    print("Couldn't read Log data")
+#        with open('welcomemsg.json', 'r') as fp:
+#          welcomemsg = json.load(fp)     
+#==============================================================================================================
+#if settings["restartPoint"] != None:
+#    client.sendMessage(settings["restartPoint"], "Programs return!")
+#    settings["restartBot"] = None
+#==============================================================================================================
+def RhyN_(to, mid):
     try:
-       line.sendMessage(msg)
-    except Exception as error:
-       print(error)
-
-def restartBot():
-    print ("RESTART SERVER")
-    time.sleep(3)
-    python = sys.executable
-    os.execl(python, python, *sys.argv)
-    
-def logError(text):
-    line.log("[ ─•۞✟ℓℓஆՁゆຸ۞•─ ] " + str(text))
-    time_ = datetime.now()
-    with open("errorLog.txt","a") as error:
-        error.write("\n[%s] %s" % (str(time), text))
-
-def sendMessage(to, text, contentMetadata={}, contentType=0):
-    mes = Message()
-    mes.to, mes.from_ = to, profile.mid
-    mes.text = text
-    mes.contentType, mes.contentMetadata = contentType, contentMetadata
-    if to not in messageReq:
-        messageReq[to] = -1
-    messageReq[to] += 1
-        
-def sendMessageWithMention(to, lineMID):
-    try:
-        aa = '{"S":"0","E":"3","M":'+json.dumps(lineMID)+'}'
-        text_ = '@x '
+        aa = '{"S":"0","E":"3","M":'+json.dumps(mid)+'}'
+        text_ = '@Rh'
         line.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
     except Exception as error:
         logError(error)
+#==============================================================================================================
+                        
+def cTime_to_datetime(unixtime):
+    return datetime.datetime.fromtimestamp(int(str(unixtime)[:len(str(unixtime))-3]))
+def dt_to_str(dt):
+    return dt.strftime('%H:%M:%S')
+
+def delExpire():
+    if temp_flood != {}:
+        for tmp in temp_flood:
+            if temp_flood[tmp]["expire"] == True:
+                if time.time() - temp_flood[tmp]["time"] >= 3*10:
+                    temp_flood[tmp]["expire"] = False
+                    temp_flood[tmp]["time"] = time.time()
+                    try:
+                        userid = "https://line.me/ti/p/~" + line.profile.userid
+                        line.sendFooter(tmp, "Spam is over , Now Bots Actived !", str(userid), "http://dl.profile.line-cdn.net/"+line.getContact(lineMID).pictureStatus, line.getContact(lineMID).displayName)
+                    except Exception as error:
+                        logError(error)
+
+def load():
+    global images
+    global stickers
+    with open("image.json","r") as fp:
+        images = json.load(fp)
+    with open("sticker.json","r") as fp:
+        stickers = json.load(fp)
+        
+def sendSticker(to, version, packageId, stickerId):
+    contentMetadata = {
+        'STKVER': version,
+        'STKPKGID': packageId,
+        'STKID': stickerId
+    }
+    line.sendMessage(to, '', contentMetadata, 7)
+
+def sendImage(to, path, name="image"):
+    try:
+        if settings["server"] == "VPS":
+            line.sendImageWithURL(to, str(path))
+    except Exception as error:
+        logError(error)
+#==============================================================================================================
+def logError(text):
+    line.log("[ INFO ] ERROR : " + str(text))
+    time_ = datetime.datetime.now()
+    with open("errorLog.txt","a") as error:
+        error.write("\n[%s] %s" % (str(time_), text))
+#==============================================================================================================
+def delete_log():
+    ndt = datetime.datetime.now()
+    for data in msg_dict:
+        if (datetime.datetime.utcnow() - cTime_to_datetime(msg_dict[data]["createdTime"])) > datetime.timedelta(1):
+            del msg_dict[msg_id]
+            
+def changeVideoAndPictureProfile(pict, vids):
+    try:
+        files = {'file': open(vids, 'rb')}
+        obs_params = line.genOBSParams({'oid': clientMID, 'ver': '2.0', 'type': 'video', 'cat': 'vp.mp4'})
+        data = {'params': obs_params}
+        r_vp = client.server.postContent('{}/talk/vp/upload.nhn'.format(str(client.server.LINE_OBS_DOMAIN)), data=data, files=files)
+        if r_vp.status_code != 201:
+            return "Failed update profile"
+        line.updateProfilePicture(pict, 'vp')
+        return "Success update profile"
+    except Exception as e:
+        raise Exception("Error change video and picture profile {}".format(str(e)))
+
+def changeProfileVideo(to):
+    if settings['changeProfileVideo']['picture'] == None:
+        return line.sendMessage(to, "Foto tidak ditemukan")
+    elif settings['changeProfileVideo']['video'] == None:
+        return line.sendMessage(to, "Video tidak ditemukan")
+    else:
+        path = settings['changeProfileVideo']['video']
+        files = {'file': open(path, 'rb')}
+        obs_params = line.genOBSParams({'oid': client.getProfile().mid, 'ver': '2.0', 'type': 'video', 'cat': 'vp.mp4'})
+        data = {'params': obs_params}
+        r_vp = line.server.postContent('{}/talk/vp/upload.nhn'.format(str(client.server.LINE_OBS_DOMAIN)), data=data, files=files)
+        if r_vp.status_code != 201:
+            return line.sendMessage(to, "Gagal update profile")
+        path_p = settings['changeProfileVideo']['picture']
+        settings['changeProfileVideo']['status'] = False
+        line.updateProfilePicture(path_p, 'vp')
+        
+def speedtest(วินาที):
+    นาที, วินาที = divmod(วินาที,60)
+    ชั่วโมง, นาที = divmod(นาที,60)
+    วัน, ชั่วโมง = divmod(ชั่วโมง,24)
+    อาทิตย์, วัน = divmod(วัน,7)
+    if วัน == 0:
+        return '%02d' % (วินาที)
+    elif วัน > 0 and อาทิตย์ == 0:
+        return '%02d' %(วินาที)
+    elif วัน > 0 and อาทิตย์ > 0:
+        return '%02d' %(วินาที)
 #==============================================================================================================
 def command(text):
     pesan = text.lower()
@@ -297,6 +365,7 @@ def command(text):
     else:
         cmd = "Undefined command"
     return cmd
+#=======================================================
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
  helpmsg ="""
       ⇱วิธีใช้งานทั้งหมด⇲     
